@@ -2,7 +2,7 @@
 
 Contributors:
 Dylan Wilbur
-
+Keaton Heisterman
 
 ## Configuration
 You will need to add a file `config/keys.js` with the following information:
