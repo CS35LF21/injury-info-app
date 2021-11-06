@@ -13,8 +13,8 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              <i className="material-icons">code</i>
-              MERN
+              <i className="material-icons">enhanced_encryption</i>
+              The Injury Index
             </Link>
           </div>
         </nav>
