@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
@@ -11,10 +10,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-
-          <Routes><Route exact path="/" component={Landing} /></Routes>
-          <Routes><Route exact path="/register" component={Register} /></Routes>
-          <Routes><Route exact path="/login" component={Login} /></Routes>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </div>
       </Router>
     );
