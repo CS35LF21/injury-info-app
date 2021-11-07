@@ -13,16 +13,15 @@ module.exports = {
 };
 ```
 
-## Getting Set up
+## Getting Set up: install dependencies
 ```bash
 npm install
+npm run client-install
 ```
 
-## Starting the backend server
+## Starting the server
 
-This will be updated later to unify running the frontend and backend at the same time
 
 ```bash
-cd backend
-nodemon server
+npm run dev
 ```
