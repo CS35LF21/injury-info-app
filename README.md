@@ -1,8 +1,9 @@
 # README
 
 Contributors:
-Dylan Wilbur
-Keaton Heisterman
+Dylan Wilbur,
+Keaton Heisterman,
+Ethan Matus
 
 ## Configuration
 You will need to add a file `config/keys.js` with the following information:
