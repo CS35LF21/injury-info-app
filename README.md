@@ -20,6 +20,8 @@ npm install
 npm run client-install
 ```
 
+Note: `npm run client-install` will likely complain about npm audit vulnerabilities. This is not an issue: see [this github issue](https://github.com/facebook/create-react-app/issues/11174)
+
 ## Starting the server
 
 
