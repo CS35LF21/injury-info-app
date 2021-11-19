@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const posts = require("./routes/api/posts")
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -29,6 +30,7 @@ require("./config/passport")(passport);
 
 //Routes
 app.use("/api/users", users);
+app.use("/api/posts/", posts);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
