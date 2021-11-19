@@ -1,7 +1,7 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
-module.exports = validatePostInput = data => {
+module.exports = function validatePostInput(data) {
    let errors = {};
 
    let { title, body } = data;
@@ -12,7 +12,7 @@ module.exports = validatePostInput = data => {
    if (Validator.isEmpty(title)) {
       errors.title = "Title is required";
    }
-   if (Validator.isEmpty(content)) {
+   if (Validator.isEmpty(body)) {
       errors.body = "Description is required";
    }
 

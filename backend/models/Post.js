@@ -6,7 +6,7 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  content: {
+  body: {
     type: String,
     required: true
   },
@@ -15,4 +15,4 @@ const PostSchema = new Schema({
     default: Date.now
   }
 });
-module.exports = Post = mongoose.model("posts", UserSchema);
+module.exports = Post = mongoose.model("posts", PostSchema);
