@@ -1,3 +1,15 @@
 backend/node_modules
 node_modules
 backend/config/keys.js
+#ignore all files in client
+client/*
+
+
+#expect
+!client/public
+!client/src
+!client/.gitignore
+!client/package-lock.json
+!client/package.json
+!client/README.md
+
