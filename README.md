@@ -4,6 +4,7 @@ Contributors:
 Dylan Wilbur,
 Keaton Heisterman,
 Ethan Matus
+Jai Parera
 
 ## Configuration
 You will need to add a file `config/keys.js` with the following information:
