@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import { withRouter } from 'react-router-dom';
 class Login extends Component {
   constructor() {
     super();
@@ -16,6 +17,7 @@ class Login extends Component {
   }
 componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
+      console.log(this.props);
       this.props.history.push("/dashboard"); // push user to dashboard when they login
     }
 if (nextProps.errors) {
@@ -33,6 +35,7 @@ const userData = {
       email: this.state.email,
       password: this.state.password
     };
+    console.log(userData);
 this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
   };
 render() {

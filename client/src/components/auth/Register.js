@@ -1,33 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { useLocation, useParams, useNavigate } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
-
-export const withRouter = ComponentWithRouter => props => {
-  const location = useLocation();
-  const match = { params: useParams() };
-  const navigate = useNavigate();
-  const history = {
-    back: () => navigate(-1),
-    goBack: () => navigate(-1),
-    location,
-    push: (url, state) => navigate(url, { state }),
-    replace: (url, state) => navigate(url, { replace: true, state }),
-  };
-  return (
-    <ComponentWithRouter
-      location={location}
-      match={match}
-      navigate={navigate}
-      history={history}
-      {...props}
-    />
-  );
-};
-
 
 class Register extends Component {
   constructor() {
@@ -40,29 +16,43 @@ class Register extends Component {
       errors: {}
     };
   }
-componentWillReceiveProps(nextProps) {
+
+  componentDidMount() {
+    // If logged in and user navigates to Register page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
       });
     }
   }
-onChange = e => {
+
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+
+  onSubmit = e => {
     e.preventDefault();
-const newUser = {
+
+    const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-this.props.registerUser(newUser, this.props.history); 
+
+    this.props.registerUser(newUser, this.props.history);
   };
-render() {
+
+  render() {
     const { errors } = this.state;
-return (
+
+    return (
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -156,15 +146,18 @@ return (
     );
   }
 }
+
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
+
 export default connect(
   mapStateToProps,
   { registerUser }
