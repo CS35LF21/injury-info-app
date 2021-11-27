@@ -13,6 +13,7 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import PostForm from "./components/posts/PostForm"
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -46,6 +47,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+            <Route exact path="/create" component={PostForm} />
           </div>
         </Router>
       </Provider>
