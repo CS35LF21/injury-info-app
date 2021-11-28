@@ -9,6 +9,8 @@ const InjuryIndex = ({ posts, auth }) => {
    const [search, setSearch] = useState("");
    const [display, setDisplay] = useState(false);
 
+//    setSearch("IT");
+
    const handleChange = e => {
       setSearch(inputRef.current.value.toLowerCase());
    };
@@ -35,6 +37,7 @@ const InjuryIndex = ({ posts, auth }) => {
                   <Form.Group controlId="searchBar">
                      <Form.Control
                         type="text"
+                        defaultValue="IT"
                         placeholder="Search Post..."
                         style={{ height: 40 }}
                         ref={inputRef}

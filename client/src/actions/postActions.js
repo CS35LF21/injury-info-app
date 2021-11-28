@@ -21,7 +21,7 @@ export const createPost = (postData, history) => dispatch => {
             type: CREATE_POST,
             payload: res.data
          });
-         history.push("/dashboard");
+         history.push("/index");
       })
       .catch(err => {
          dispatch(setErrors(err.response.data));
