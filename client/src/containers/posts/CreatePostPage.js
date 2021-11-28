@@ -45,7 +45,7 @@ const CreatePostPage = ({ errors, createPost, loading, history }) => {
     post.body = content;
       const { title, body } = post;
       console.log({title, body});
-    //   createPost({ title, body }, history);
+      createPost({ title, body }, history);
    };
 
    return (

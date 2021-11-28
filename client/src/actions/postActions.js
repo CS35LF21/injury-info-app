@@ -21,12 +21,10 @@ export const createPost = (postData, history) => dispatch => {
             type: CREATE_POST,
             payload: res.data
          });
-         dispatch(togglePostLoading());
-         history.push("/blog");
+         history.push("/dashboard");
       })
       .catch(err => {
          dispatch(setErrors(err.response.data));
-         dispatch(togglePostLoading());
       });
 };
 

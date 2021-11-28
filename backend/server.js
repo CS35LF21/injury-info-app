@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.json());
 
 const uri = require('./config/keys').mongoURI;
-mongoose.connect(uri);
+mongoose.connect(uri, { useNewUrlParser: true });
 
 const connection = mongoose.connection;
 connection.once('open', () => {
