@@ -6,5 +6,5 @@ export default combineReducers({
   auth: authReducer,
   post: postReducer,
   errors: errorReducer
-
+  
 });

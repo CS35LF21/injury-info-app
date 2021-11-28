@@ -60,7 +60,7 @@ class Navbar extends Component {
               Home
             </Link>
             
-            <form action="dashboard" method = "GET" className="right"style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "150px"}}>
+            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "150px"}}>
               <input
                 type="text"
                 name="query"
