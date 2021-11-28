@@ -13,6 +13,15 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import NotFound from "./components/layout/NotFound";
+
+
+
+
+import CreatePostPage from "./containers/posts/CreatePostPage";
+import ViewPostPage from "./containers/posts/ViewPostPage";
+import InjuryIndexPage from "./containers/posts/InjuryIndexPage";
+import UpdatePostPage from "./containers/posts/UpdatePostPage";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -40,11 +49,16 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
             <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/create" component={CreatePostPage} />
+              <Route exact path="/page/:id" component={ViewPostPage} />
+              <Route exact path="/index" component={InjuryIndexPage} />
+              <PrivateRoute exact path="/page/update/:id" component={UpdatePostPage} />
+              <Route component={NotFound} />
             </Switch>
           </div>
         </Router>

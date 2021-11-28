@@ -32,7 +32,7 @@ class Navbar extends Component {
       <div className="navbar-fixed">
         <nav className="z-depth-0">
           <div className="nav-wrapper white">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li>
                 <a href="sass.html">Sass</a>
               </li>
