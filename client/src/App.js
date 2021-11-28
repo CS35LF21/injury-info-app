@@ -15,6 +15,11 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PostForm from "./components/posts/PostForm"
 
+
+
+import CreatePostPage from "./containers/posts/CreatePostPage";
+
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -47,7 +52,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
-            <Route exact path="/create" component={PostForm} />
+            <Route exact path="/create" component={CreatePostPage} />
           </div>
         </Router>
       </Provider>

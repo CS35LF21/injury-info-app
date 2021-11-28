@@ -1,31 +1,12 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component, useCallback } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "",
-      content: "",
-      errors: {}
-    };
-  }
-onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
-onSubmit = e => {
-    e.preventDefault();
-const userData = {
-      title: this.state.title,
-      content: this.state.content
-    };
-console.log(userData);
-  };
-render() {
-    const { errors } = this.state;
-return (
-  <div className="container">
+import PropTypes from "prop-types";
+
+const PostForm = ({ post, onChange, mdeChange, loading, onSubmit }) => {
+  const { title, content, errors } = post;
+  return (
+    <div className="container">
     <div style={{ marginTop: "4rem" }} className="row">
       <div className="col s8 offset-s2">
         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -33,21 +14,24 @@ return (
             <b>New Post</b>
           </h4>
         </div>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={onSubmit}>
           <div className="input-field col s12">
             <input
-              onChange={this.onChange}
-              value={this.state.title}
+              onChange={onChange}
+              value={title}
               error={errors.title}
+              // onBlur={onBlur}
               id="title"
+              placeholder="Title"
             />
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title"></label>
           </div>
           <div className="input-field col s12">
             <SimpleMDE 
-              onChange={this.onChange}
-              value={this.state.content} 
-              error={errors.content}
+              onChange={mdeChange}
+              value={content} 
+              // error={errors.body}
+              // onBlur={onBlur}
               id="content"
                 />
           </div>
@@ -69,7 +53,14 @@ return (
       </div>
     </div>
   </div>
-);
-  }
-}
-export default Login;
+  );
+};
+
+PostForm.propTypes = {
+  post: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
+};
+
+export default PostForm;
