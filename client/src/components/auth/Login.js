@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-import { withRouter } from 'react-router-dom';
+
+
 class Login extends Component {
   constructor() {
     super();
@@ -14,6 +15,12 @@ class Login extends Component {
       errors: {},
       
     };
+  }
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
   }
 componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
@@ -125,3 +132,12 @@ export default connect(
   mapStateToProps,
   { loginUser }
 )(Login);
+
+function currentlyAuthenticated(){
+  if (this.props.auth.isAuthenticated){
+    return(1);
+  }
+  else{
+    return(0);
+  }
+}
