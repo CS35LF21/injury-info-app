@@ -6,12 +6,12 @@ import ListPost from "../posts/ListPost";
 import { ThemeProvider } from "@material-ui/core";
 
 const InjuryIndex = ({ posts, auth }) => {
-   var temp = window.location.search;
-   console.log(!temp)
+   var temp = ""
    try {temp = window.location.search.split("=")[1].replace("+", " ");}
    catch{ temp = ""}
+   console.log(temp)
    const inputRef = useRef(null);
-   const [search, setSearch] = useState(temp);
+   const [search, setSearch] = useState(temp.toLowerCase());
    const [display, setDisplay] = useState(false);
 
    const handleChange = e => {
