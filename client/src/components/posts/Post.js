@@ -1,8 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Card from "react-bootstrap/Card";
-import getFormattedDate from "../../utils/getFormattedDate";
-import "./post.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -22,9 +19,16 @@ const useStyles = makeStyles({
   }
 });
 
+// const handleEdit = () => {
+//     history.push(`/blog/post/update/${post._id}`);
+//  };
+
+//  const handleDelete = () => {
+//     deletePost(post._id, history);
+//  };
+
 
 const Post = ({ post }) => {
-   const postDate = getFormattedDate(post.date);
    const classes = useStyles();
    return (
 
@@ -35,24 +39,29 @@ const Post = ({ post }) => {
           
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          CardActions are just a flexbox component that wraps the children in
-          8px of padding and 8px horizontal padding between children.
+            This is some filler text for what will eventually be not filler text.
+            This should be replaced by either an image of some kind or possibly a snippet
+            of the contents of the page.
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <Button size="small" color="primary">
-          Primary
+      {/* <CardActions disableSpacing>
+        <Button 
+            size="small"
+            color="primary"
+            variant="outlined"
+            onClick={handleEdit}
+        >
+          Edit
         </Button>
-        <Button size="small" color="secondary">
-          Secondary
+        <Button 
+            size="small"
+            color="secondary"
+            variant="outlined"
+            onClick={handleDelete}
+        >
+          Delete
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
 
    );

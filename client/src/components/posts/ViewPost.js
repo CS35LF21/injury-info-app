@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // import { Container, Row, Col, Button } from "react-bootstrap";
 // import "./post.scss";
 import ReactMarkdown from 'react-markdown'
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 
 const ViewPost = ({ post, auth, onDelete, onEdit }) => {
@@ -17,6 +18,22 @@ const ViewPost = ({ post, auth, onDelete, onEdit }) => {
            </div>
          </div>
        </div>
+       {auth && (
+            <Row className="mt-4">
+               <Col className="text-center">
+                  <Button
+                     className="mr-2"
+                     variant="primary"
+                     onClick={onEdit}
+                  >
+                     Edit
+                  </Button>
+                  <Button variant="secondary" onClick={onDelete}>
+                     Delete
+                  </Button>
+               </Col>
+            </Row>
+         )}
      </div>
    );
 };

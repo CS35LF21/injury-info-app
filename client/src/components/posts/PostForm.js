@@ -3,17 +3,12 @@ import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import PropTypes from "prop-types";
 
-const PostForm = ({ post, onChange, mdeChange, loading, onSubmit }) => {
-  const { title, content, errors } = post;
+const PostForm = ({ post, content, onChange, mdeChange, loading, onSubmit }) => {
+  const { title, errors } = post;
   return (
     <div className="container">
     <div style={{ marginTop: "4rem" }} className="row">
       <div className="col s8 offset-s2">
-        <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-          <h4>
-            <b>New Post</b>
-          </h4>
-        </div>
         <form noValidate onSubmit={onSubmit}>
           <div className="input-field col s12">
             <input

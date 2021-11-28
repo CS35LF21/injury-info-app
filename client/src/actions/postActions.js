@@ -92,7 +92,7 @@ export const updatePost = (id, postData, history) => dispatch => {
             payload: res.data
          });
          dispatch(togglePostLoading());
-         history.push(`/blog/post/${res.data._id}`);
+         history.push(`/page/${res.data._id}`);
       })
       .catch(err => {
          dispatch(setErrors(err.response.data));
@@ -110,7 +110,7 @@ export const deletePost = (id, history) => dispatch => {
             payload: id
          });
          dispatch(togglePostLoading());
-         history.push("/blog");
+         history.push("/index");
       })
       .catch(err => {
          dispatch(setErrors(err.response.data));

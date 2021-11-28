@@ -1,21 +1,20 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import InjuryIndex from "../components/layout/InjuryIndex";
-import { getPosts, getPostsByAuthor } from "../actions/postActions";
+import InjuryIndex from "../../components/layout/InjuryIndex";
+import { getPosts } from "../../actions/postActions";
 
 const InjuryIndexPage = ({
    isAuthenticated,
-   getPostsByAuthor,
    getPosts,
    match,
    posts
 }) => {
    useEffect(() => {
-      isAuthenticated ? getPosts() : getPostsByAuthor(match.params.author);
-   }, [isAuthenticated, getPosts, getPostsByAuthor, match]);
+       getPosts();
+   }, [isAuthenticated, getPosts, match]);
 
-   return <Blog posts={posts} auth={isAuthenticated} />;
+   return <InjuryIndex posts={posts} auth={isAuthenticated} />;
 };
 
 const mapStateToProps = state => ({
@@ -27,10 +26,10 @@ InjuryIndexPage.propTypes = {
    posts: PropTypes.array.isRequired,
    isAuthenticated: PropTypes.bool.isRequired,
    getPosts: PropTypes.func.isRequired,
-   getPostsByAuthor: PropTypes.func.isRequired
 };
 
 export default connect(
    mapStateToProps,
-   { getPostsByAuthor, getPosts }
+   { getPosts }
+
 )(InjuryIndexPage);

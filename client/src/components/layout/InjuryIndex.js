@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
-import "./blog.scss";
 
 const InjuryIndex = ({ posts, auth }) => {
    const inputRef = useRef(null);
@@ -26,7 +25,7 @@ const InjuryIndex = ({ posts, auth }) => {
          <div className="mx-3">
             <Nav className="justify-content-between mt-2 mb-2">
                {auth && (
-                  <Link to="/blog/post/create">
+                  <Link to="/create">
                      <Button variant="light" className="styleBtn">
                         +
                      </Button>

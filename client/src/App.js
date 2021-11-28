@@ -13,12 +13,13 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import PostForm from "./components/posts/PostForm"
 
 
 
 import CreatePostPage from "./containers/posts/CreatePostPage";
 import ViewPostPage from "./containers/posts/ViewPostPage";
+import InjuryIndexPage from "./containers/posts/InjuryIndexPage";
+import UpdatePostPage from "./containers/posts/UpdatePostPage";
 
 
 // Check for token to keep user logged in
@@ -54,7 +55,9 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
             <Route exact path="/create" component={CreatePostPage} />
-            <Route exact path="/post/:id" component={ViewPostPage} />
+            <Route exact path="/page/:id" component={ViewPostPage} />
+            <Route exact path="/index" component={InjuryIndexPage} />
+            <Route exact path="/page/update/:id" component={UpdatePostPage} />
           </div>
         </Router>
       </Provider>

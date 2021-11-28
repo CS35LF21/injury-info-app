@@ -30,22 +30,12 @@ const CreatePostPage = ({ errors, createPost, loading, history }) => {
      });
    };
 
-//    const handleBlur = e => {
-//       const { name, value } = e.target;
-//       const error = { ...post.errors, ...Validate(name, value).errors };
-//       setPost({ ...post, errors: { ...error } });
-//    };
-
-   const handleSubmit = e => {
-      e.preventDefault();
-    //   setPost({
-    //     ...post,
-    //     e.target.body: 
-    //   });
-    post.body = content;
-      const { title, body } = post;
-      console.log({title, body});
-      createPost({ title, body }, history);
+   const handleSubmit = (e) => {
+     e.preventDefault();
+     post.body = content;
+     const { title, body } = post;
+     console.log({ title, body });
+     createPost({ title, body }, history);
    };
 
    return (

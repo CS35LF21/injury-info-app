@@ -17,7 +17,7 @@ const ViewPostPage = ({
    }, [match, getPostByID]);
 
    const handleEdit = () => {
-      history.push(`/blog/post/update/${post._id}`);
+      history.push(`/page/update/${post._id}`);
    };
 
    const handleDelete = () => {
