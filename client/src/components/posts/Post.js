@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 const Post = ({ post }) => {
    const classes = useStyles();
    return (
-
+    
 <Card className={classes.root}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">

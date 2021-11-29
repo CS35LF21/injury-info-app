@@ -3,10 +3,15 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
+import { ThemeProvider } from "@material-ui/core";
 
 const InjuryIndex = ({ posts, auth }) => {
+   var temp = ""
+   try {temp = window.location.search.split("=")[1].replace("+", " ");}
+   catch{ temp = ""}
+   console.log(temp)
    const inputRef = useRef(null);
-   const [search, setSearch] = useState("");
+   const [search, setSearch] = useState(temp.toLowerCase());
    const [display, setDisplay] = useState(false);
 
    const handleChange = e => {
@@ -38,6 +43,7 @@ const InjuryIndex = ({ posts, auth }) => {
                      <Form.Control
                         type="text"
                         placeholder="Search Post..."
+                        defaultValue = {temp}
                         style={{ height: 40 }}
                         ref={inputRef}
                         onChange={handleChange}
