@@ -34,13 +34,13 @@ class Navbar extends Component {
           <div className="nav-wrapper white">
             <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li>
-                <a href="sass.html">Sass</a>
+                <a >Sass</a>
               </li>
               <li>
-                <a href="badges.html">Components</a>
+                <a >Components</a>
               </li>
               <li>
-                <a href="collapsible.html">JavaScript</a>
+                <a >JavaScript</a>
               </li>
             </ul>
             <Link
@@ -59,7 +59,6 @@ class Navbar extends Component {
             <Link to="/" style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "10px"}} className="col center blue-text">
               Home
             </Link>
-            
             <form action="index" method = "GET" className="right"style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "150px"}}>
               <input
                 type="text"
