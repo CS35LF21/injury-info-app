@@ -9,8 +9,6 @@ const InjuryIndex = ({ posts, auth }) => {
    const [search, setSearch] = useState("");
    const [display, setDisplay] = useState(false);
 
-//    setSearch("IT");
-
    const handleChange = e => {
       setSearch(inputRef.current.value.toLowerCase());
    };
@@ -22,11 +20,13 @@ const InjuryIndex = ({ posts, auth }) => {
       }, 1000);
    }, [posts]);
 
+   const isAdmin = auth.user.role === "Admin";
+
    return (
       <React.Fragment>
          <div className="mx-3">
             <Nav className="justify-content-between mt-2 mb-2">
-               {auth && (
+               {isAdmin && (
                   <Link to="/create">
                      <Button variant="light" className="styleBtn">
                         +
@@ -37,7 +37,6 @@ const InjuryIndex = ({ posts, auth }) => {
                   <Form.Group controlId="searchBar">
                      <Form.Control
                         type="text"
-                        defaultValue="IT"
                         placeholder="Search Post..."
                         style={{ height: 40 }}
                         ref={inputRef}
