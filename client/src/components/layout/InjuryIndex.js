@@ -27,11 +27,13 @@ const InjuryIndex = ({ posts, auth }) => {
       }, 1000);
    }, [posts]);
 
+   const isAdmin = auth.user.role === "Admin";
+
    return (
       <React.Fragment>
          <div className="mx-3">
             <Nav className="justify-content-between mt-2 mb-2">
-               {auth && (
+               {isAdmin && (
                   <Link to="/create">
                      <Button variant="light" className="styleBtn">
                         +

@@ -42,6 +42,13 @@ router.get(
     "/create",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+       if(req.user.role !== "Admin") {
+          return res.send(403, {
+             'status': 403,
+             'code': 1,
+             'message': 'You cannot perform this action as a non-admin'
+          });
+       }
        const author = req.user.user_name;
        const post = req.body;
        const { errors, isValid } = validatePostInput(post);
@@ -61,6 +68,13 @@ router.get(
     "/update/:id",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+       if(req.user.role !== "Admin") {
+          return res.send(403, {
+             'status': 403,
+             'code': 1,
+             'message': 'You cannot perform this action as a non-admin'
+          });
+       }
        const author = req.user.user_name;
        const { errors, isValid } = validatePostInput(req.body);
        if (!isValid) {
@@ -83,6 +97,13 @@ router.get(
     "/delete/:id",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+       if(req.user.role !== "Admin") {
+          return res.send(403, {
+             'status': 403,
+             'code': 1,
+             'message': 'You cannot perform this action as a non-admin'
+          });
+       }
        const author = req.user.user_name;
        Post.findOneAndDelete({ author, _id: req.params.id })
           .then(doc => res.status(200).json(doc))

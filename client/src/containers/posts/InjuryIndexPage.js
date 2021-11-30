@@ -5,27 +5,27 @@ import InjuryIndex from "../../components/layout/InjuryIndex";
 import { getPosts } from "../../actions/postActions";
 
 const InjuryIndexPage = ({
-   isAuthenticated,
+   auth,
    getPosts,
    match,
    posts
 }) => {
    useEffect(() => {
        getPosts();
-   }, [isAuthenticated, getPosts, match]);
+   }, [auth, getPosts, match]);
 
-   return <InjuryIndex posts={posts} auth={isAuthenticated} />;
+   return <InjuryIndex posts={posts} auth={auth} />;
 };
 
 const mapStateToProps = state => ({
-   isAuthenticated: state.auth.isAuthenticated,
-   posts: state.post.posts
+   auth: state.auth,
+   posts: state.post.posts,
 });
 
 InjuryIndexPage.propTypes = {
    posts: PropTypes.array.isRequired,
-   isAuthenticated: PropTypes.bool.isRequired,
-   getPosts: PropTypes.func.isRequired,
+   auth: PropTypes.object.isRequired,
+   getPosts: PropTypes.func.isRequired
 };
 
 export default connect(

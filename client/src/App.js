@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import AdminRoute from "./components/private-route/AdminRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
 import { Provider } from "react-redux";
@@ -54,10 +55,10 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/create" component={CreatePostPage} />
+              <AdminRoute exact path="/create" component={CreatePostPage} />
               <Route exact path="/page/:id" component={ViewPostPage} />
-              <Route path="/index" component={InjuryIndexPage} />
-              <PrivateRoute exact path="/page/update/:id" component={UpdatePostPage} />
+              <Route exact path="/index" component={InjuryIndexPage} />
+              <AdminRoute exact path="/page/update/:id" component={UpdatePostPage} />
               <Route component={NotFound} />
             </Switch>
           </div>
