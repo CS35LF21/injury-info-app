@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import currentlyAuthenticated from "../auth/Login"
-import {Route} from "react-router-dom"
 class Navbar extends Component {
   state = {
     websiteUrl: "",
@@ -53,8 +51,8 @@ class Navbar extends Component {
               <i className="material-icons">enhanced_encryption</i>
               The Injury Index
             </Link>
-            <Link to="/dashboard" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col blue-text">
-              Dashboard
+            <Link to="/index" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col blue-text">
+              Index
             </Link>
             <Link to="/" style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "10px"}} className="col center blue-text">
               Home

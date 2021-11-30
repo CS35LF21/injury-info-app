@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
 import { ThemeProvider } from "@material-ui/core";
+import { applyMiddleware } from "redux";
 
 const InjuryIndex = ({ posts, auth }) => {
+
    var temp = ""
    try {temp = window.location.search.split("=")[1].replace("+", " ");}
    catch{ temp = ""}

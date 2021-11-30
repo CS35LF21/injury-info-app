@@ -56,7 +56,7 @@ class App extends Component {
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/create" component={CreatePostPage} />
               <Route exact path="/page/:id" component={ViewPostPage} />
-              <Route exact path="/index" component={InjuryIndexPage} />
+              <Route path="/index" component={InjuryIndexPage} />
               <PrivateRoute exact path="/page/update/:id" component={UpdatePostPage} />
               <Route component={NotFound} />
             </Switch>
