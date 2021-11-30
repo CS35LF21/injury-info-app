@@ -54,7 +54,7 @@ class App extends Component {
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <AdminRoute exact path="/create" component={CreatePostPage} />
               <Route exact path="/page/:id" component={ViewPostPage} />
               <Route exact path="/index" component={InjuryIndexPage} />

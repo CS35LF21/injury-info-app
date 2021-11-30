@@ -51,20 +51,20 @@ class Navbar extends Component {
               <i className="material-icons">enhanced_encryption</i>
               The Injury Index
             </Link>
-            <Link to="/index" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col blue-text">
-              Index
-            </Link>
-            <Link to="/" style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "10px"}} className="col center blue-text">
+            <Link to="/" style={{fontFamily: "monospace"}, {paddingLeft: "100px"}} className="col center blue-text">
               Home
             </Link>
-            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "150px"}}>
+            <Link to="/index" style={{fontFamily: "monospace"}, {paddingLeft: "50px"}} className="col blue-text">
+              Index
+            </Link>
+            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "80px"}}>
               <input
                 type="text"
                 name="query"
                 style={{
                   width: "200px",
                   borderRadius: "3px",
-                  letterSpacing: "1.5px",
+                  letterSpacing: "1.5px"
                 }}
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
@@ -76,6 +76,9 @@ class Navbar extends Component {
 
             <Link to="/login" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col right blue-text">
               Login
+            </Link>
+            <Link to="/login" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col right blue-text">
+              Account
             </Link>
             
           </div>
