@@ -1,10 +1,14 @@
+import { fontFamily } from "@mui/system";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {Button} from "../Button/Button"
 class Navbar extends Component {
   state = {
     websiteUrl: "",
     isValid: false
   };
+
+  
 
   validateWebsiteUrl = websiteUrl => {
     return String(websiteUrl).toLowerCase();
@@ -24,7 +28,6 @@ class Navbar extends Component {
     const { websiteUrl } = this.state;
     console.log("Website URL", websiteUrl);
   };
-
   render() {
     return (
       <div className="navbar-fixed">
@@ -41,6 +44,7 @@ class Navbar extends Component {
                 <a >JavaScript</a>
               </li>
             </ul>
+            
             <Link
               to="/"
               style={{
@@ -57,7 +61,7 @@ class Navbar extends Component {
             <Link to="/index" style={{fontFamily: "monospace"}, {paddingLeft: "50px"}} className="col blue-text">
               Index
             </Link>
-            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "80px"}}>
+            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "30px"}}>
               <input
                 type="text"
                 name="query"
@@ -69,8 +73,8 @@ class Navbar extends Component {
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
               />
-              <button onClick={this.submitForm} disabled={!this.state.isValid}>
-                Search
+              <button style={{backgroundColor:"transparent"}, {border:"2px solid #39A9DB"}} onClick={this.submitForm} disabled={!this.state.isValid}>
+                Search Index
               </button>
             </form>
 
