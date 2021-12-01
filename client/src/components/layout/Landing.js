@@ -14,21 +14,23 @@ class Landing extends Component {
       <div style={{ height: "45vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align" >
-            <h4>
+            <h4 style={{paddingTop:"370px"}}>
               <b>Aches and pains</b> keeping you from your sport?
             </h4>
-            <p className="flow-text grey-text text-darken-1"  >
-              The one stop solution for getting back to your normal self
-            </p>
+            <h8 className="flow-text grey-text text-darken-1">
+              Click on a body part or search above to begin finding the solution
+            </h8>
             <br />
             <br />
+          </div>
+        <div className="col s12 center-align" >
         <div className="row">
             <div className="col s4 center-align" style={{
                 float: "left",
                 width: "33.33%",
                 padding: "5px"
                 }}>
-                <div id="front_side" style={{ paddingTop: "200px" }}>
+                <div id="front_side" >
                 <img src="/images/front_edge.jpeg" useMap="#image-map1"/>
                   <map name="image-map1">
                     <area target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
@@ -63,7 +65,7 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-              <div id="side_side" style={{ paddingTop: "200px" }} >
+              <div id="side_side">
                 <img src="/images/side_edge.jpeg" useMap="#image-map2"/>
                   <map name="image-map2">
                     <area target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
@@ -97,7 +99,7 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-              <div id="back_side" style={{ paddingTop: "200px" }} >
+              <div id="back_side">
                 <img src="/images/back_edge.jpeg" useMap="#image-map3"/>
                   <map name="image-map3">
                     <area target="_self" alt="Head" title="Head" href="/index?query=head"coords="99,61,106,38,99,14,78,8,63,15,53,42,66,61" shape="poly"/>
