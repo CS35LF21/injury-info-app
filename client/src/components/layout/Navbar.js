@@ -35,19 +35,19 @@ class Navbar extends Component {
 		    <p></p>
 		    </li>
 		<li>
-                    <Link to="/" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Home</b></Link>
+                    <Link to="/" style={{fontFamily: "monospace"}, {  color: "#26a69a" }}><b>Home</b></Link>
 		</li>
 		<li style={{paddingLeft:"50px"}}>
 		    <p></p>
 		    </li>
 		<li>
-                    <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Login</b></Link>
+                    <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Login</b></Link>
 		</li>
 		<li style={{paddingLeft:"50px"}}>
 		    <p></p>
 		    </li>
 		<li>
-                  <Link  to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Account</b></Link>
+                  <Link  to="/login" style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Account</b></Link>
               </li>
 		
 	    </ul>
@@ -66,9 +66,9 @@ class Navbar extends Component {
                 type="text"
                 name="query"
                   style={{
-		      marginLeft: "30px",
+		      marginLeft: "0px",
 		      marginRight: "10px",
-		      paddingLeft: "50px",
+		      paddingLeft: "0px",
 		      paddingRight: "10px",
                       width: "200px",
                       borderRadius: "3px",
@@ -77,14 +77,13 @@ class Navbar extends Component {
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
               />
-		<button class="waves-effect waves-light btn" style={{
-			    paddingLeft: "5px",
+		<button class="waves-effect waves-light hoverable teal lighten-1 btn" style={{
 			    background: "#378ed0",
 			    color: "white",
 			    fontSize: "17px",
 			    border: "1px solid grey",
-			    borderLeft: "none", /* Prevent double borders */
-			    cursor: "pointer"}}
+			    cursor: "pointer",
+			    textTransform: "capitalize"}}
 			onClick={this.submitForm} disabled={!this.state.isValid}>
                 Search
               </button>
@@ -94,7 +93,7 @@ class Navbar extends Component {
 		    <p></p>
 		    </li>
 		<li>
-                  <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Index</b></Link>
+                  <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Index</b></Link>
               </li>
 	    </ul>
             
