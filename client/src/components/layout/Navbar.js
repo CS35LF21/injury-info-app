@@ -71,13 +71,15 @@ class Navbar extends Component {
                 Search
               </button>
             </form>
-
-            <Link to="/login" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col right blue-text">
-              Login
-            </Link>
-              <Link to="/login" style={{fontFamily: "monospace",}, {paddingLeft: "0px",}, {paddingRight: "50px"}} className="col right blue-text">
-              Account
-            </Link>
+	    <ul id="nav-mobile" className="right hide-on-med-and-down">
+		<li style={{paddingRight:"50px"}}>
+                    <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Login</Link>
+              </li>
+		<li style={{paddingRight:"20px"}}>
+                  <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Account</Link>
+              </li>
+	    </ul>
+            
             
           </div>
         </nav>
