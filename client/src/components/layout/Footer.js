@@ -29,28 +29,44 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="foot-fixed" styel={{
-        paddingBottom: "1px",
-        verticalAlign: "bottom",
-        bottom: "1px"
-      }}>
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
-            <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li>
-                
-              </li>
-              <li>
-                
-              </li>
-              <li>
-                
-              </li>
-            </ul>
-            
+	<footer class="page-footer teal lighten-1">
+          <div class="container">
+              <div class="row">
+		      <Link to="/" style={{
+			  
+			  fontFamily: "monospace",
+		      }}
+		      className="col s12 brand-logo black-text">
+		    <i className="material-icons">enhanced_encryption</i>
+		</Link>
+				  <div class="col l6 s12">
+		  
+		<Link to="/">    
+                <h5 class="white-text">The Injury Index</h5>
+		</Link>
+				      <p class="grey-text text-lighten-4" style={{margin:"0"}}>By</p>
+				      <p class="grey-text text-lighten-4" style={{margin:"0"}}>Dylan Wilbur</p>
+				      <p class="grey-text text-lighten-4" style={{margin:"0"}}>Keaton Heisterman</p>
+				      <p class="grey-text text-lighten-4"style={{margin:"0"}}>Jai Parera</p>
+				      <p class="grey-text text-lighten-4"style={{margin:"0"}}>& Ethan Matus</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <h6 class="white-text" style={{marginTop: "25px"}} >Navigate</h6>
+                <ul>
+                  <li><Link to="/login" class="grey-text text-lighten-3">Login</Link></li>
+                    <li><Link to="/index?" class="grey-text text-lighten-3" >Search</Link></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </nav>
-      </div>
+          <div class="footer-copyright ">
+            <div class="container">
+		2021 The Injury Index 
+            <a class="grey-text text-lighten-4 right" href="https://github.com/CS35LF21/injury-info-app">Checkout Our Repo</a>
+            </div>
+          </div>
+        </footer>
     );
   }
 }
