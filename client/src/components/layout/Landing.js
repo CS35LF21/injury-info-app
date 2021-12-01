@@ -11,7 +11,7 @@ class Landing extends Component {
   }
   render() {
     return (
-      <div style={{ height: "45vh" }} className="container valign-wrapper">
+      <div style={{ height: "100vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align" >
             <h4>
@@ -28,7 +28,7 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-                <div id="front_side" style={{ paddingTop: "200px" }}>
+                <div id="front_side" >
                 <img src="/images/front_edge.jpeg" useMap="#image-map1"/>
                   <map name="image-map1">
                     <area target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
@@ -63,15 +63,15 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-              <div id="side_side" style={{ paddingTop: "200px" }} >
+              <div id="side_side" >
                 <img src="/images/side_edge.jpeg" useMap="#image-map2"/>
                   <map name="image-map2">
                     <area target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
                     <area target="_self" alt="jaw" title="jaw" href="/index?query=jaw" coords="36,41,61,35,76,42,79,60,41,70" shape="poly"/>
                     <area target="_self" alt="neck" title="neck" href="/index?query=neck" coords="53,69,76,62,84,83,57,84" shape="poly"/>
-                    <area target="_self" alt="shoulder" title="shoulder" href="//index?query=shoulder" coords="59,86,59,121,90,126,92,107,83,85" shape="poly"/>
+                    <area target="_self" alt="shoulder" title="shoulder" href="/index?query=shoulder" coords="59,86,59,121,90,126,92,107,83,85" shape="poly"/>
                     <area target="_self" alt="chest" title="chest" href="/index?query=chest" coords="57,89,58,142,36,143,40,117,48,100" shape="poly"/>
-                    <area target="_self" alt="tricep" title="tricep" href="//index?query=tricep" coords="72,124,72,163,82,167,87,126" shape="poly"/>
+                    <area target="_self" alt="tricep" title="tricep" href="/index?query=tricep" coords="72,124,72,163,82,167,87,126" shape="poly"/>
                     <area target="_self" alt="bicep" title="bicep" href="/index?query=bicep" coords="59,125,62,162,70,163,70,123" shape="poly"/>
                     <area target="_self" alt="elbow" title="elbow" href="/index?query=elbow" coords="63,162,81,169,80,190,63,187" shape="poly"/>
                     <area target="_self" alt="forearm" title="forearm" href="/index?query=forearm" coords="63,189,65,263,77,262,76,240,80,194" shape="poly"/>
@@ -97,7 +97,7 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-              <div id="back_side" style={{ paddingTop: "200px" }} >
+              <div id="back_side" >
                 <img src="/images/back_edge.jpeg" useMap="#image-map3"/>
                   <map name="image-map3">
                     <area target="_self" alt="Head" title="Head" href="/index?query=head"coords="99,61,106,38,99,14,78,8,63,15,53,42,66,61" shape="poly"/>
@@ -119,6 +119,11 @@ class Landing extends Component {
                    <area target="_self" alt="l_foot" title="l_foot" href="/index?query=foot" coords="61,470,75,469,74,490,59,488" shape="poly"/>
                 </map>
               </div>
+              </div>
+              <div className="col s12 center-align" >
+              <p className="flow-text grey-text text-darken-1"  style={{fontSize:"20px"}}>
+              <small> Need help? Try clicking on the body map where you're experiencing pain and we'll do our part to help you find a remedy. </small>
+              </p>
               </div>
             </div>
           </div>
