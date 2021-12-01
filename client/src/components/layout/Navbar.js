@@ -27,18 +27,15 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="navbar-fixed">
+	<div className="navbar-fixed" style={{boxShadow: "0 2px 4px 0 rgba(0,0,0,.2)"}}>
         <nav className="z-depth-0">
-          <div className="nav-wrapper white">
+          <div className="nav-wrapper white" style={{boxShadow: "0 2px 4px 0 rgba(0,0,0,.2)"}}>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-		<li>
-                <a >Sass</a>
+		<li style={{paddingLeft:"250px"}}>
+                    <Link to="/" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Home</Link>
               </li>
-              <li>
-                <a >Components</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
+		<li style={{paddingLeft:"50px"}}>
+                  <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Index</Link>
               </li>
 	    </ul>
             <Link
@@ -50,12 +47,6 @@ class Navbar extends Component {
             >
               <i className="material-icons">enhanced_encryption</i>
               The Injury Index
-            </Link>
-            <Link to="/" style={{fontFamily: "monospace"}, {paddingLeft: "130px"}} className="col center blue-text">
-              Home
-            </Link>
-              <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#2196F3",}, {paddingLeft: "50px"}} className="col blue-text">
-              Index
             </Link>
             <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "80px"}}>
               <input
