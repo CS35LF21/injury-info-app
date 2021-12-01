@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
-import { ThemeProvider } from "@material-ui/core";
-import { applyMiddleware } from "redux";
 
 const InjuryIndex = ({ posts, auth }) => {
 
@@ -43,6 +41,7 @@ const InjuryIndex = ({ posts, auth }) => {
                <Form>
                   <Form.Group controlId="searchBar">
                      <Form.Control
+                        paddingLeft="50px"
                         type="text"
                         placeholder="Search Post..."
                         defaultValue = {temp}

@@ -1,10 +1,14 @@
+import { fontFamily } from "@mui/system";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {Button} from "../Button/Button"
 class Navbar extends Component {
   state = {
     websiteUrl: "",
     isValid: false
   };
+
+  
 
   validateWebsiteUrl = websiteUrl => {
     return String(websiteUrl).toLowerCase();
@@ -24,7 +28,6 @@ class Navbar extends Component {
     const { websiteUrl } = this.state;
     console.log("Website URL", websiteUrl);
   };
-
   render() {
     return (
 	<div className="navbar-fixed" style={{boxShadow: "0 2px 4px 0 rgba(0,0,0,.2)"}}>
@@ -49,8 +52,19 @@ class Navbar extends Component {
 		<li>
                   <Link  to="/login" style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Account</b></Link>
               </li>
+<<<<<<< HEAD
 		
 	    </ul>
+=======
+              <li>
+                <a >Components</a>
+              </li>
+              <li>
+                <a >JavaScript</a>
+              </li>
+            </ul>
+            
+>>>>>>> 70734e2187a93b38d4d0f84f636c36743d0823ec
             <Link
               to="/"
               style={{
@@ -61,7 +75,17 @@ class Navbar extends Component {
               <i className="material-icons">enhanced_encryption</i>
               The Injury Index
             </Link>
+<<<<<<< HEAD
             <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "10px"}, {paddingRight: "80px"}}>
+=======
+            <Link to="/" style={{fontFamily: "monospace"}, {paddingLeft: "100px"}} className="col center blue-text">
+              Home
+            </Link>
+            <Link to="/index" style={{fontFamily: "monospace"}, {paddingLeft: "50px"}} className="col blue-text">
+              Index
+            </Link>
+            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "30px"}}>
+>>>>>>> 70734e2187a93b38d4d0f84f636c36743d0823ec
               <input
                 type="text"
                 name="query"
@@ -77,6 +101,7 @@ class Navbar extends Component {
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
               />
+<<<<<<< HEAD
 		<button class="waves-effect waves-light hoverable teal lighten-1 btn" style={{
 			    background: "#378ed0",
 			    color: "white",
@@ -86,6 +111,10 @@ class Navbar extends Component {
 			    textTransform: "capitalize"}}
 			onClick={this.submitForm} disabled={!this.state.isValid}>
                 Search
+=======
+              <button style={{backgroundColor:"transparent"}, {border:"2px solid #39A9DB"}} onClick={this.submitForm} disabled={!this.state.isValid}>
+                Search Index
+>>>>>>> 70734e2187a93b38d4d0f84f636c36743d0823ec
               </button>
             </form>
 	    <ul id="nav-mobile" className="right hide-on-med-and-down">
