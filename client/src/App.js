@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer"
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -49,7 +50,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            <header>
             <Navbar />
+            </header>
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
@@ -61,6 +64,7 @@ class App extends Component {
               <AdminRoute exact path="/page/update/:id" component={UpdatePostPage} />
               <Route component={NotFound} />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </Provider>
