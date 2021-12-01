@@ -34,7 +34,7 @@ class Navbar extends Component {
         <nav className="z-depth-0">
           <div className="nav-wrapper white" style={{boxShadow: "0 2px 4px 0 rgba(0,0,0,.2)"}}>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-		<li style={{paddingLeft:"100px"}}>
+		<li style={{paddingLeft:"50px"}}>
 		    <p></p>
 		    </li>
 		<li>
