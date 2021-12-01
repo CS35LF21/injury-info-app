@@ -53,7 +53,7 @@ const InjuryIndex = ({ posts, auth }) => {
                </Form>
             </Nav>
          </div>
-         <div style={{paddingLeft:"400px"}} >
+         <div style={{paddingLeft:"400px"}  } >
          {posts.length > 0 ? (
             <ListPost 
                posts={posts.filter(post =>
