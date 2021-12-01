@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 
 const ListPost = ({ posts }) => {
    return (
-      <div className="grid-container mx-3">
+      <div className="grid-container mx-3" style={{paddingBottom:"1000px"}}>
          {posts.map(post => (
             <Link to={`/page/${post._id}`} key={post._id}>
                <Post post={post} />

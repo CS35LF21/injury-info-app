@@ -47,15 +47,6 @@ class Footer extends Component {
                 
               </li>
             </ul>
-            <Link to="/dashboard" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col blue-text">
-              Dashboard
-            </Link>
-            <Link to="/" style={{fontFamily: "monospace",}, {paddingLeft: "0px"}, {paddingRight: "10px"}} className="col center blue-text">
-              Home
-            </Link>
-            <Link to="/login" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col right blue-text">
-              Login
-            </Link>
             
           </div>
         </nav>

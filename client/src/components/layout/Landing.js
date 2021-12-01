@@ -14,7 +14,7 @@ class Landing extends Component {
       <div style={{ height: "100vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align" >
-            <h4 style={{paddingTop:"370px"}}>
+            <h4 style={{paddingTop:"0px"}}>
               <b>Aches and pains</b> keeping you from your sport?
             </h4>
             <h8 className="flow-text grey-text text-darken-1">
@@ -65,11 +65,7 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-<<<<<<< HEAD
-              <div id="side_side" >
-=======
               <div id="side_side">
->>>>>>> 70734e2187a93b38d4d0f84f636c36743d0823ec
                 <img src="/images/side_edge.jpeg" useMap="#image-map2"/>
                   <map name="image-map2">
                     <area target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
@@ -103,11 +99,7 @@ class Landing extends Component {
                 width: "33.33%",
                 padding: "5px"
                 }}>
-<<<<<<< HEAD
-              <div id="back_side" >
-=======
               <div id="back_side">
->>>>>>> 70734e2187a93b38d4d0f84f636c36743d0823ec
                 <img src="/images/back_edge.jpeg" useMap="#image-map3"/>
                   <map name="image-map3">
                     <area target="_self" alt="Head" title="Head" href="/index?query=head"coords="99,61,106,38,99,14,78,8,63,15,53,42,66,61" shape="poly"/>

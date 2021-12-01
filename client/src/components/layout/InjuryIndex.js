@@ -53,8 +53,9 @@ const InjuryIndex = ({ posts, auth }) => {
                </Form>
             </Nav>
          </div>
+         <div style={{paddingLeft:"400px"}} >
          {posts.length > 0 ? (
-            <ListPost
+            <ListPost 
                posts={posts.filter(post =>
                   post.title.toLowerCase().includes(search)
                )}
@@ -70,6 +71,7 @@ const InjuryIndex = ({ posts, auth }) => {
                </Container>
             )
          )}
+         </div>
       </React.Fragment>
    );
 };
