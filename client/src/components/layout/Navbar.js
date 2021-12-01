@@ -31,7 +31,7 @@ class Navbar extends Component {
         <nav className="z-depth-0">
           <div className="nav-wrapper white">
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li>
+		<li>
                 <a >Sass</a>
               </li>
               <li>
@@ -40,7 +40,7 @@ class Navbar extends Component {
               <li>
                 <a >JavaScript</a>
               </li>
-            </ul>
+	    </ul>
             <Link
               to="/"
               style={{
@@ -51,10 +51,10 @@ class Navbar extends Component {
               <i className="material-icons">enhanced_encryption</i>
               The Injury Index
             </Link>
-            <Link to="/" style={{fontFamily: "monospace"}, {paddingLeft: "100px"}} className="col center blue-text">
+            <Link to="/" style={{fontFamily: "monospace"}, {paddingLeft: "130px"}} className="col center blue-text">
               Home
             </Link>
-            <Link to="/index" style={{fontFamily: "monospace"}, {paddingLeft: "50px"}} className="col blue-text">
+              <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#2196F3",}, {paddingLeft: "50px"}} className="col blue-text">
               Index
             </Link>
             <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "80px"}}>
@@ -69,7 +69,14 @@ class Navbar extends Component {
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
               />
-              <button onClick={this.submitForm} disabled={!this.state.isValid}>
+		<button style={{
+			    background: "#378ed0",
+			    color: "white",
+			    fontSize: "17px",
+			    border: "1px solid grey",
+			    borderLeft: "none", /* Prevent double borders */
+			    cursor: "pointer"}}
+			onClick={this.submitForm} disabled={!this.state.isValid}>
                 Search
               </button>
             </form>
@@ -77,7 +84,7 @@ class Navbar extends Component {
             <Link to="/login" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col right blue-text">
               Login
             </Link>
-            <Link to="/login" style={{fontFamily: "monospace",}, {paddingRight: "50px"}} className="col right blue-text">
+              <Link to="/login" style={{fontFamily: "monospace",}, {paddingLeft: "0px",}, {paddingRight: "50px"}} className="col right blue-text">
               Account
             </Link>
             
