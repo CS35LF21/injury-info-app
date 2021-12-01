@@ -64,7 +64,7 @@ class App extends Component {
               <AdminRoute exact path="/page/update/:id" component={UpdatePostPage} />
               <Route component={NotFound} />
             </Switch>
-            <Footer />
+            
           </div>
         </Router>
       </Provider>
