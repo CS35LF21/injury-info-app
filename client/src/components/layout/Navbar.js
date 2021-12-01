@@ -31,12 +31,25 @@ class Navbar extends Component {
         <nav className="z-depth-0">
           <div className="nav-wrapper white" style={{boxShadow: "0 2px 4px 0 rgba(0,0,0,.2)"}}>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-		<li style={{paddingLeft:"250px"}}>
-                    <Link to="/" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Home</Link>
-              </li>
+		<li style={{paddingLeft:"100px"}}>
+		    <p></p>
+		    </li>
+		<li>
+                    <Link to="/" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Home</b></Link>
+		</li>
 		<li style={{paddingLeft:"50px"}}>
-                  <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Index</Link>
+		    <p></p>
+		    </li>
+		<li>
+                    <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Login</b></Link>
+		</li>
+		<li style={{paddingLeft:"50px"}}>
+		    <p></p>
+		    </li>
+		<li>
+                  <Link  to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Account</b></Link>
               </li>
+		
 	    </ul>
             <Link
               to="/"
@@ -48,19 +61,24 @@ class Navbar extends Component {
               <i className="material-icons">enhanced_encryption</i>
               The Injury Index
             </Link>
-            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "80px"}}>
+            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "10px"}, {paddingRight: "80px"}}>
               <input
                 type="text"
                 name="query"
-                style={{
-                  width: "200px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
+                  style={{
+		      marginLeft: "30px",
+		      marginRight: "10px",
+		      paddingLeft: "50px",
+		      paddingRight: "10px",
+                      width: "200px",
+                      borderRadius: "3px",
+                      letterSpacing: "1.5px"
                 }}
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
               />
-		<button style={{
+		<button class="waves-effect waves-light btn" style={{
+			    paddingLeft: "5px",
 			    background: "#378ed0",
 			    color: "white",
 			    fontSize: "17px",
@@ -72,11 +90,11 @@ class Navbar extends Component {
               </button>
             </form>
 	    <ul id="nav-mobile" className="right hide-on-med-and-down">
-		<li style={{paddingRight:"50px"}}>
-                    <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Login</Link>
-              </li>
-		<li style={{paddingRight:"20px"}}>
-                  <Link to="/login" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}>Account</Link>
+		<li style={{paddingLeft:"0px"}}>
+		    <p></p>
+		    </li>
+		<li>
+                  <Link to="/index" style={{fontFamily: "monospace"}, {  color: "#2196F3"}}><b>Index</b></Link>
               </li>
 	    </ul>
             
