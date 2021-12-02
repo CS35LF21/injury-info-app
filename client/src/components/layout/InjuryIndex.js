@@ -53,13 +53,15 @@ const InjuryIndex = ({ posts, auth }) => {
                </Form>
             </Nav>
          </div>
-         <div style={{paddingLeft:"400px"}  } >
+         <div style={{paddingLeft:"400px"}}>
          {posts.length > 0 ? (
+            <div style={{minHeight:"42vh"}}>
             <ListPost 
                posts={posts.filter(post =>
                   post.title.toLowerCase().includes(search)
                )}
             />
+            </div>
          ) : (
             display && (
                <Container

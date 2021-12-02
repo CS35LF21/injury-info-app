@@ -8,7 +8,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 const ViewPost = ({ post, auth, onDelete, onEdit }) => {
    return (
-     <div className="container">
+     <div className="container" style={{minHeight:"44vh"}}>
        <div style={{ marginTop: "4rem" }} className="row">
          <div className="col s8 offset-s2">
            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
