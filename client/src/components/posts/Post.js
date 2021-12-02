@@ -31,6 +31,7 @@ const useStyles = makeStyles({
 const Post = ({ post }) => {
    const classes = useStyles();
    return (
+
     
 <Card className={classes.root}>
       <CardContent>
@@ -39,9 +40,15 @@ const Post = ({ post }) => {
           
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-            This is some filler text for what will eventually be not filler text.
-            This should be replaced by either an image of some kind or possibly a snippet
-            of the contents of the page.
+          {post.body.length > 300 ? (
+                post.body.substring(0,299)
+          ) : (
+
+            post.body
+          )}
+          {/* {
+            (post.body.length() > 100 ? (post.body.substring(0,99)) : (post.body))
+          } */}
         </Typography>
       </CardContent>
       {/* <CardActions disableSpacing>
