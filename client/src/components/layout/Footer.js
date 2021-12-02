@@ -8,25 +8,6 @@ class Footer extends Component {
     isValid: false
   };
 
-  validateWebsiteUrl = websiteUrl => {
-    return String(websiteUrl).toLowerCase();
-  };
-
-  changeUrl = e => {
-    const { value } = e.target;
-    const isValid = !value || this.validateWebsiteUrl(value);
-
-    this.setState({
-      websiteUrl: value,
-      isValid
-    });
-  };
-
-  submitForm = () => {
-    const { websiteUrl } = this.state;
-    console.log("Website URL", websiteUrl);
-  };
-
   render() {
     return (
 	<footer class="page-footer teal lighten-1">
@@ -55,7 +36,7 @@ class Footer extends Component {
                 <ul>
                   <li><Link to="/login" class="grey-text text-lighten-3">Login</Link></li>
                     <li><Link to="/index?" class="grey-text text-lighten-3" >Search</Link></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><Link to="/about" class="grey-text text-lighten-3" >About</Link></li>
                 </ul>
               </div>
             </div>
