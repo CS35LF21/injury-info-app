@@ -22,6 +22,9 @@ const InjuryIndex = ({ posts, auth }) => {
    const handleChange = e => {
       setSearch(inputRef.current.value.toLowerCase());
    };
+   const handleSearchSubmit = e => {
+      e.preventDefault();
+   };
 
    // setting no post found after waiting for a second
    useEffect(() => {
@@ -43,7 +46,8 @@ const InjuryIndex = ({ posts, auth }) => {
                      </Button>
                   </Link>
                )}
-               <Form>
+               <Form
+                        onSubmit={handleSearchSubmit}>
                   <Form.Group controlId="searchBar">
                      <Form.Control
                         paddingLeft="50px"
