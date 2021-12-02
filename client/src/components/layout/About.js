@@ -16,7 +16,7 @@ class About extends Component {
                 <div class="valign-wrapper">
                   <div class="col s12">
                       <h3>About Us</h3>
-                       <p>The Injury Index focues on serving our users the proper informaiton to help them get back to their normal selves.</p>
+                       <p>The Injury Index focues on serving our users the proper information to help them get back to their normal selves.</p>
                        <p> </p>
                       <h5>Our Team</h5>
 				      <p  style={{margin:"0",

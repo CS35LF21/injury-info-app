@@ -21,6 +21,7 @@ const PostForm = ({ post, content, onChange, mdeChange, loading, onSubmit }) => 
             />
             <label htmlFor="title"></label>
           </div>
+          
           <div className="input-field col s12">
             <SimpleMDE 
               onChange={mdeChange}

@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
@@ -63,27 +64,30 @@ router.get(
           .catch(err => console.log({ create: "Error creating new post" }));
     }
  );
- 
+
  router.patch(
     "/update/:id",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-       if(req.user.role !== "Admin") {
+      /* 
+      if(req.user.role !== "Admin") {
           return res.send(403, {
              'status': 403,
              'code': 1,
              'message': 'You cannot perform this action as a non-admin'
           });
        }
-       const author = req.user.user_name;
+       */
+       console.log('inside patch 2');
        const { errors, isValid } = validatePostInput(req.body);
        if (!isValid) {
           return res.status(400).json(errors);
        }
-       const { title, body } = req.body;
+       console.log("Inside patch 3");
+       const { title, body, comments } = req.body;
        Post.findOneAndUpdate(
           { author, _id: req.params.id },
-          { $set: { title, body } },
+          { $set: { title, body, comments } },
           { new: true }
        )
           .then(doc => res.status(200).json(doc))

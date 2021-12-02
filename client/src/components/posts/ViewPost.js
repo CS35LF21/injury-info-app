@@ -2,11 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 // import { Container, Row, Col, Button } from "react-bootstrap";
 // import "./post.scss";
+import ViewComments from "../../containers/posts/ViewComments.js"
 import ReactMarkdown from 'react-markdown'
 import { Container, Row, Col, Button } from "react-bootstrap";
 import useWindowDimensions from "../Window/Window"
 
-
+/*
+           <form onSubmit={(e)=>{
+               e.defaultPrevented();
+               onNewComment(e.target[0].value)
+               console.log(e.target[0].value)
+            }}>
+               <input type = 'text' placeholder = "Add a comment" />
+            </form>
+*/
 
 const ViewPost = ({ post, auth, onDelete, onEdit, onNewComment }) => {
    var { height, width } = useWindowDimensions();
@@ -23,20 +32,8 @@ const ViewPost = ({ post, auth, onDelete, onEdit, onNewComment }) => {
             </div>
 
             {
-               post.comments.map(comment=>{
-                  return (
-                     <h6 key={comment}>{comment}</h6>
-                  )
-               })
+               ViewComments({post, onNewComment})
             }
-
-           <form onSubmit={(e)=>{
-               e.defaultPrevented();
-               onNewComment("This is a new comment")
-               console.log("This is a new comment")
-            }}>
-               <input type = 'text' placeholder = "Add a comment" />
-            </form>
 
          </div>
        </div>
