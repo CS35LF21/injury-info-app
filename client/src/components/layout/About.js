@@ -9,7 +9,7 @@ class About extends Component {
     render() {
       return (
       <body>
-        <div class="valign-wrapper">
+        <div class="valign-wrapper" style={{paddingBottom:"10vh"}}>
           <div class="valign" ></div>
             <div class="container">
               <div class="row">
