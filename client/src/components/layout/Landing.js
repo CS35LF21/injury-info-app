@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "material-ui-search-bar";
+import ReactTooltip from "react-tooltip";
+
 class Landing extends Component {
   constructor(props) {
     super(props);
@@ -33,14 +34,35 @@ class Landing extends Component {
                 <div id="front_side" >
                 <img src="/images/front_edge.jpeg" useMap="#image-map1"/>
                   <map name="image-map1">
-                    <area target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
-                    <area target="_self" alt="Eyes" title="Eyes" href="/index?query=" coords="56,41,100,41,99,32,56,31" shape="poly"/>
-                    <area target="_self" alt="Nose" title="Nose" href="/index?query=nose" coords="75,42,76,52,83,51,81,43" shape="poly"/>
-                    <area target="_self" alt="Jaw" title="Jaw" href="/index?query=jaw" coords="57,46,66,60,79,68,90,63,104,43,85,42,86,50,76,52,71,42" shape="poly"/>
-                    <area target="_self" alt="neck" title="Neck" href="/index?query=neck" coords="67,66,78,70,90,66,97,79,80,86,62,79" shape="poly"/>
-                    <area target="_self" alt="Collarbone" title="Collarbone" href="/index?query=collarbone" coords="48,100,77,101,110,101,105,89,79,88,52,87" shape="poly"/>
-                    <area target="_self" alt="Chest" title="Chest" href="/index?query=chest" coords="46,129,46,155,77,156,111,156,113,135,114,105,77,104,43,105" shape="poly"/>
-                    <area target="_self" alt="r_shoulder" title="r_shoulder" href="/index?query=shoulder" coords="42,87,41,128,19,126,22,101" shape="poly"/>
+                  <ReactTooltip id="Eyes">
+                    <span>Eyes</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="Nose">
+                    <span>Nose</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="abs">
+                    <span>Abs</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="quad">
+                    <span>Quad</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="feet">
+                    <span>Feet</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="knee">
+                    <span>Knee</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="shins">
+                    <span>Shins</span>
+                  </ReactTooltip>
+                    <area data-tip data-for="Eyes" target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
+                    <area data-tip data-for="Eyes" target="_self" alt="Eyes" title="Eyes" href="/index?query=" coords="56,41,100,41,99,32,56,31" shape="poly"/>
+                    <area data-tip data-for="Nose" target="_self" alt="Nose" title="Nose" href="/index?query=nose" coords="75,42,76,52,83,51,81,43" shape="poly"/>
+                    <area data-tip data-for="Jaw"target="_self" alt="Jaw" title="Jaw" href="/index?query=jaw" coords="57,46,66,60,79,68,90,63,104,43,85,42,86,50,76,52,71,42" shape="poly"/>
+                    <area data-tip data-for="neck"target="_self" alt="neck" title="Neck" href="/index?query=neck" coords="67,66,78,70,90,66,97,79,80,86,62,79" shape="poly"/>
+                    <area data-tip data-for="Collarbone"target="_self" alt="Collarbone" title="Collarbone" href="/index?query=collarbone" coords="48,100,77,101,110,101,105,89,79,88,52,87" shape="poly"/>
+                    <area data-tip data-for="Chest"target="_self" alt="Chest" title="Chest" href="/index?query=chest" coords="46,129,46,155,77,156,111,156,113,135,114,105,77,104,43,105" shape="poly"/>
+                    <area data-tip data-for="r_shoulder"target="_self" alt="r_shoulder" title="r_shoulder" href="/index?query=shoulder" coords="42,87,41,128,19,126,22,101" shape="poly"/>
                     <area target="_self" alt="l_shoulder" title="l_shoulder" href="/index?query=shoulder" coords="113,86,117,126,137,127,132,95" shape="poly"/>
                     <area target="_self" alt="l_bicep" title="l_bicep" href="/index?query=bicep" coords="119,132,138,132,141,173,121,176" shape="poly"/>
                     <area target="_self" alt="r_bicep" title="r_bicep" href="/index?query=bicep" coords="20,132,39,132,36,177,19,171" shape="poly"/>
@@ -50,13 +72,13 @@ class Landing extends Component {
                     <area target="_self" alt="l_forearm" title="l_forearm" href="/index?query=forearm" coords="126,204,143,201,139,252,130,249" shape="poly"/>
                     <area target="_self" alt="r_hand" title="r_hand" href="/index?query=hand" coords="17,254,28,255,25,270,27,282,22,286,14,275" shape="poly"/>
                     <area target="_self" alt="l_hand" title="l_hand" href="/index?query=hand" coords="131,251,140,255,144,271,139,290,131,285" shape="poly"/>
-                    <area target="_self" alt="abs" title="abs" href="/index?query=abs" coords="100,182,93,207,92,228,66,230,64,209,60,180,56,158,103,159" shape="poly"/>
+                    <area data-tip data-for="abs" target="_self" alt="abs" title="abs" href="/index?query=abs" coords="100,182,93,207,92,228,66,230,64,209,60,180,56,158,103,159" shape="poly"/>
                     <area target="_self" alt="side" title="side" href="/index?query=side" coords="53,159,44,162,39,206,39,227,37,248,61,249,81,248,120,249,119,226,112,194,114,158,105,159,104,176,98,194,92,226,68,228" shape="poly"/>
                     <area target="_self" alt="hips" title="hips" href="/index?query=hips" coords="35,270,72,272,119,271,119,252,78,250,34,249" shape="poly"/>
-                    <area target="_self" alt="quad" title="quad" href="/index?query=quad" coords="36,273,47,337,111,337,121,273" shape="poly"/>
-                    <area target="_self" alt="knee" title="knee" href="/index?query=knee" coords="49,364,72,364,84,364,109,364,109,342,84,340,75,340,50,341" shape="poly"/>
-                    <area target="_self" alt="shins" title="shins" href="/index?query=shins" coords="45,368,57,428,59,463,72,469,80,466,99,463,104,426,107,367" shape="poly"/>
-                    <area target="_self" alt="feet" title="feet" href="/index?query=feet" coords="49,486,68,496,89,495,111,487,99,463,81,466,74,466,59,465" shape="poly"/>
+                    <area data-tip data-for="quad" target="_self" alt="quad" title="quad" href="/index?query=quad" coords="36,273,47,337,111,337,121,273" shape="poly"/>
+                    <area data-tip data-for="knee" target="_self" alt="knee" title="knee" href="/index?query=knee" coords="49,364,72,364,84,364,109,364,109,342,84,340,75,340,50,341" shape="poly"/>
+                    <area data-tip data-for="shins" target="_self" alt="shins" title="shins" href="/index?query=shins" coords="45,368,57,428,59,463,72,469,80,466,99,463,104,426,107,367" shape="poly"/>
+                    <area data-tip data-for="feet"target="_self" alt="feet" title="feet" href="/index?query=feet" coords="49,486,68,496,89,495,111,487,99,463,81,466,74,466,59,465" shape="poly"/>
                   </map>
               </div>
               </div>
@@ -68,28 +90,43 @@ class Landing extends Component {
               <div id="side_side">
                 <img src="/images/side_edge.jpeg" useMap="#image-map2"/>
                   <map name="image-map2">
-                    <area target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
-                    <area target="_self" alt="jaw" title="jaw" href="/index?query=jaw" coords="36,41,61,35,76,42,79,60,41,70" shape="poly"/>
-                    <area target="_self" alt="neck" title="neck" href="/index?query=neck" coords="53,69,76,62,84,83,57,84" shape="poly"/>
-                    <area target="_self" alt="shoulder" title="shoulder" href="/index?query=shoulder" coords="59,86,59,121,90,126,92,107,83,85" shape="poly"/>
-                    <area target="_self" alt="chest" title="chest" href="/index?query=chest" coords="57,89,58,142,36,143,40,117,48,100" shape="poly"/>
-                    <area target="_self" alt="tricep" title="tricep" href="/index?query=tricep" coords="72,124,72,163,82,167,87,126" shape="poly"/>
-                    <area target="_self" alt="bicep" title="bicep" href="/index?query=bicep" coords="59,125,62,162,70,163,70,123" shape="poly"/>
-                    <area target="_self" alt="elbow" title="elbow" href="/index?query=elbow" coords="63,162,81,169,80,190,63,187" shape="poly"/>
-                    <area target="_self" alt="forearm" title="forearm" href="/index?query=forearm" coords="63,189,65,263,77,262,76,240,80,194" shape="poly"/>
-                    <area target="_self" alt="hand" title="hand" href="/index?query=hand" coords="62,264,65,284,72,292,73,284,77,273,77,264" shape="poly"/>
-                    <area target="_self" alt="abs" title="abs" href="/index?query=abs" coords="36,144,54,143,50,173,48,198,48,220,39,234" shape="poly"/>
-                    <area target="_self" alt="side" title="side" href="/index?query=side" coords="53,143,59,145,64,260,38,238,49,224,50,179" shape="poly"/>
-                    <area target="_self" alt="glutei" title="glutei" href="/index?query=glute" coords="83,200,93,227,95,242,86,258,79,257,79,234" shape="poly"/>
-                    <area target="_self" alt="hips" title="hips" href="/index?query=hip" coords="39,244,40,274,60,273,59,259" shape="poly"/>
-                    <area target="_self" alt="quad" title="quad" href="/index?query=quad" coords="57,277,63,348,54,349,41,275" shape="poly"/>
-                    <area target="_self" alt="it band" title="it band" href="/index?query=it+band" coords="61,292,63,345,72,348,69,294" shape="poly"/>
-                    <area target="_self" alt="hammy" title="hammy" href="/index?query=hamstring" coords="79,265,85,266,86,347,73,345,72,302" shape="poly"/>
-                    <area target="_self" alt="Knee" title="Knee" href="/index?query=knee" coords="56,351,85,351,89,375,59,376" shape="poly"/>
-                    <area target="_self" alt="shin" title="shin" href="/index?query=shin" coords="60,380,79,378,77,454,66,453,65,415" shape="poly"/>
-                    <area target="_self" alt="calf" title="calf" href="/index?query=calf" coords="79,379,88,378,92,408,88,453,79,451,80,412" shape="poly"/>
-                    <area target="_self" alt="ankle" title="ankle" href="/index?query=ankle" coords="66,454,86,455,86,469,64,467" shape="poly"/>
-                    <area target="" alt="foot" title="foot" href="/index?query=foot" coords="87,470,91,485,79,492,37,495,26,485,44,479,64,469" shape="poly"/>
+                  <ReactTooltip id="quad">
+                    <span>quad</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="it band">
+                    <span>It Band</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="Knee">
+                    <span>Knee</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="calf">
+                    <span>calf</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="ankle">
+                    <span>ankle</span>
+                  </ReactTooltip>
+                    <area area data-tip data-for="head" target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
+                    <area area data-tip data-for="jaw" target="_self" alt="jaw" title="jaw" href="/index?query=jaw" coords="36,41,61,35,76,42,79,60,41,70" shape="poly"/>
+                    <area area data-tip data-for="neck" target="_self" alt="neck" title="neck" href="/index?query=neck" coords="53,69,76,62,84,83,57,84" shape="poly"/>
+                    <area area data-tip data-for="shoulder" target="_self" alt="shoulder" title="shoulder" href="/index?query=shoulder" coords="59,86,59,121,90,126,92,107,83,85" shape="poly"/>
+                    <area area data-tip data-for="chest" target="_self" alt="chest" title="chest" href="/index?query=chest" coords="57,89,58,142,36,143,40,117,48,100" shape="poly"/>
+                    <area area data-tip data-for="tricep" target="_self" alt="tricep" title="tricep" href="/index?query=tricep" coords="72,124,72,163,82,167,87,126" shape="poly"/>
+                    <area area data-tip data-for="bicep" target="_self" alt="bicep" title="bicep" href="/index?query=bicep" coords="59,125,62,162,70,163,70,123" shape="poly"/>
+                    <area area data-tip data-for="elbow" target="_self" alt="elbow" title="elbow" href="/index?query=elbow" coords="63,162,81,169,80,190,63,187" shape="poly"/>
+                    <area area data-tip data-for="forearm" target="_self" alt="forearm" title="forearm" href="/index?query=forearm" coords="63,189,65,263,77,262,76,240,80,194" shape="poly"/>
+                    <area area data-tip data-for="hand" target="_self" alt="hand" title="hand" href="/index?query=hand" coords="62,264,65,284,72,292,73,284,77,273,77,264" shape="poly"/>
+                    <area area data-tip data-for="abs" target="_self" alt="abs" title="abs" href="/index?query=abs" coords="36,144,54,143,50,173,48,198,48,220,39,234" shape="poly"/>
+                    <area area data-tip data-for="side" target="_self" alt="side" title="side" href="/index?query=side" coords="53,143,59,145,64,260,38,238,49,224,50,179" shape="poly"/>
+                    <area area data-tip data-for="glutei" target="_self" alt="glutei" title="glutei" href="/index?query=glute" coords="83,200,93,227,95,242,86,258,79,257,79,234" shape="poly"/>
+                    <area area data-tip data-for="hips" target="_self" alt="hips" title="hips" href="/index?query=hip" coords="39,244,40,274,60,273,59,259" shape="poly"/>
+                    <area area data-tip data-for="quad" target="_self" alt="quad" title="quad" href="/index?query=quad" coords="57,277,63,348,54,349,41,275" shape="poly"/>
+                    <area area data-tip data-for="it band" target="_self" alt="it band" title="it band" href="/index?query=it+band" coords="61,292,63,345,72,348,69,294" shape="poly"/>
+                    <area area data-tip data-for="hammy" target="_self" alt="hammy" title="hammy" href="/index?query=hamstring" coords="79,265,85,266,86,347,73,345,72,302" shape="poly"/>
+                    <area area data-tip data-for="Knee"  target="_self" alt="Knee" title="Knee" href="/index?query=knee" coords="56,351,85,351,89,375,59,376" shape="poly"/>
+                    <area area data-tip data-for="shin" target="_self" alt="shin" title="shin" href="/index?query=shin" coords="60,380,79,378,77,454,66,453,65,415" shape="poly"/>
+                    <area area data-tip data-for="calf" target="_self" alt="calf" title="calf" href="/index?query=calf" coords="79,379,88,378,92,408,88,453,79,451,80,412" shape="poly"/>
+                    <area area data-tip data-for="ankle" target="_self" alt="ankle" title="ankle" href="/index?query=ankle" coords="66,454,86,455,86,469,64,467" shape="poly"/>
+                    <area area data-tip data-for="foot" target="" alt="foot" title="foot" href="/index?query=foot" coords="87,470,91,485,79,492,37,495,26,485,44,479,64,469" shape="poly"/>
                     </map>
               </div>
               </div >

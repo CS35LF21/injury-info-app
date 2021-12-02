@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
+import useWindowDimensions from "../Window/Window"
+
 
 const InjuryIndex = ({ posts, auth }) => {
 
@@ -13,9 +15,15 @@ const InjuryIndex = ({ posts, auth }) => {
    const inputRef = useRef(null);
    const [search, setSearch] = useState(temp.toLowerCase());
    const [display, setDisplay] = useState(false);
+   var { height, width } = useWindowDimensions();
+   height = height - 440
+   var string1 = height.toString() + "px"
 
    const handleChange = e => {
       setSearch(inputRef.current.value.toLowerCase());
+   };
+   const handleSearchSubmit = e => {
+      e.preventDefault();
    };
 
    // setting no post found after waiting for a second
@@ -28,17 +36,18 @@ const InjuryIndex = ({ posts, auth }) => {
    const isAdmin = auth.user.role === "Admin";
 
    return (
-      <React.Fragment>
-         <div className="mx-3">
-            <Nav className="justify-content-between mt-2 mb-2">
+      <div className="container">
+        <div style={{ marginTop: "4rem" }} className="row">
+          <div className="col s8 offset-s2"></div>
                {isAdmin && (
                   <Link to="/create">
                      <Button variant="light" className="styleBtn">
-                        +
+                        New Page
                      </Button>
                   </Link>
                )}
-               <Form>
+               <Form
+                        onSubmit={handleSearchSubmit}>
                   <Form.Group controlId="searchBar">
                      <Form.Control
                         paddingLeft="50px"
@@ -51,15 +60,16 @@ const InjuryIndex = ({ posts, auth }) => {
                      />
                   </Form.Group>
                </Form>
-            </Nav>
          </div>
-         <div style={{paddingLeft:"400px"}  } >
+         <div >
          {posts.length > 0 ? (
+            <div style={{minHeight:string1}}>
             <ListPost 
                posts={posts.filter(post =>
                   post.title.toLowerCase().includes(search)
                )}
             />
+            </div>
          ) : (
             display && (
                <Container
@@ -72,7 +82,7 @@ const InjuryIndex = ({ posts, auth }) => {
             )
          )}
          </div>
-      </React.Fragment>
+         </div>
    );
 };
 
