@@ -90,28 +90,43 @@ class Landing extends Component {
               <div id="side_side">
                 <img src="/images/side_edge.jpeg" useMap="#image-map2"/>
                   <map name="image-map2">
-                    <area target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
-                    <area target="_self" alt="jaw" title="jaw" href="/index?query=jaw" coords="36,41,61,35,76,42,79,60,41,70" shape="poly"/>
-                    <area target="_self" alt="neck" title="neck" href="/index?query=neck" coords="53,69,76,62,84,83,57,84" shape="poly"/>
-                    <area target="_self" alt="shoulder" title="shoulder" href="/index?query=shoulder" coords="59,86,59,121,90,126,92,107,83,85" shape="poly"/>
-                    <area target="_self" alt="chest" title="chest" href="/index?query=chest" coords="57,89,58,142,36,143,40,117,48,100" shape="poly"/>
-                    <area target="_self" alt="tricep" title="tricep" href="/index?query=tricep" coords="72,124,72,163,82,167,87,126" shape="poly"/>
-                    <area target="_self" alt="bicep" title="bicep" href="/index?query=bicep" coords="59,125,62,162,70,163,70,123" shape="poly"/>
-                    <area target="_self" alt="elbow" title="elbow" href="/index?query=elbow" coords="63,162,81,169,80,190,63,187" shape="poly"/>
-                    <area target="_self" alt="forearm" title="forearm" href="/index?query=forearm" coords="63,189,65,263,77,262,76,240,80,194" shape="poly"/>
-                    <area target="_self" alt="hand" title="hand" href="/index?query=hand" coords="62,264,65,284,72,292,73,284,77,273,77,264" shape="poly"/>
-                    <area target="_self" alt="abs" title="abs" href="/index?query=abs" coords="36,144,54,143,50,173,48,198,48,220,39,234" shape="poly"/>
-                    <area target="_self" alt="side" title="side" href="/index?query=side" coords="53,143,59,145,64,260,38,238,49,224,50,179" shape="poly"/>
-                    <area target="_self" alt="glutei" title="glutei" href="/index?query=glute" coords="83,200,93,227,95,242,86,258,79,257,79,234" shape="poly"/>
-                    <area target="_self" alt="hips" title="hips" href="/index?query=hip" coords="39,244,40,274,60,273,59,259" shape="poly"/>
-                    <area target="_self" alt="quad" title="quad" href="/index?query=quad" coords="57,277,63,348,54,349,41,275" shape="poly"/>
-                    <area target="_self" alt="it band" title="it band" href="/index?query=it+band" coords="61,292,63,345,72,348,69,294" shape="poly"/>
-                    <area target="_self" alt="hammy" title="hammy" href="/index?query=hamstring" coords="79,265,85,266,86,347,73,345,72,302" shape="poly"/>
-                    <area target="_self" alt="Knee" title="Knee" href="/index?query=knee" coords="56,351,85,351,89,375,59,376" shape="poly"/>
-                    <area target="_self" alt="shin" title="shin" href="/index?query=shin" coords="60,380,79,378,77,454,66,453,65,415" shape="poly"/>
-                    <area target="_self" alt="calf" title="calf" href="/index?query=calf" coords="79,379,88,378,92,408,88,453,79,451,80,412" shape="poly"/>
-                    <area target="_self" alt="ankle" title="ankle" href="/index?query=ankle" coords="66,454,86,455,86,469,64,467" shape="poly"/>
-                    <area target="" alt="foot" title="foot" href="/index?query=foot" coords="87,470,91,485,79,492,37,495,26,485,44,479,64,469" shape="poly"/>
+                  <ReactTooltip id="quad">
+                    <span>quad</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="it band">
+                    <span>It Band</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="Knee">
+                    <span>Knee</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="calf">
+                    <span>calf</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="ankle">
+                    <span>ankle</span>
+                  </ReactTooltip>
+                    <area area data-tip data-for="head" target="_self" alt="head" title="head" href="/index?query=head" coords="36,40,70,33,84,48,90,32,83,17,67,9,51,10,42,17" shape="poly"/>
+                    <area area data-tip data-for="jaw" target="_self" alt="jaw" title="jaw" href="/index?query=jaw" coords="36,41,61,35,76,42,79,60,41,70" shape="poly"/>
+                    <area area data-tip data-for="neck" target="_self" alt="neck" title="neck" href="/index?query=neck" coords="53,69,76,62,84,83,57,84" shape="poly"/>
+                    <area area data-tip data-for="shoulder" target="_self" alt="shoulder" title="shoulder" href="/index?query=shoulder" coords="59,86,59,121,90,126,92,107,83,85" shape="poly"/>
+                    <area area data-tip data-for="chest" target="_self" alt="chest" title="chest" href="/index?query=chest" coords="57,89,58,142,36,143,40,117,48,100" shape="poly"/>
+                    <area area data-tip data-for="tricep" target="_self" alt="tricep" title="tricep" href="/index?query=tricep" coords="72,124,72,163,82,167,87,126" shape="poly"/>
+                    <area area data-tip data-for="bicep" target="_self" alt="bicep" title="bicep" href="/index?query=bicep" coords="59,125,62,162,70,163,70,123" shape="poly"/>
+                    <area area data-tip data-for="elbow" target="_self" alt="elbow" title="elbow" href="/index?query=elbow" coords="63,162,81,169,80,190,63,187" shape="poly"/>
+                    <area area data-tip data-for="forearm" target="_self" alt="forearm" title="forearm" href="/index?query=forearm" coords="63,189,65,263,77,262,76,240,80,194" shape="poly"/>
+                    <area area data-tip data-for="hand" target="_self" alt="hand" title="hand" href="/index?query=hand" coords="62,264,65,284,72,292,73,284,77,273,77,264" shape="poly"/>
+                    <area area data-tip data-for="abs" target="_self" alt="abs" title="abs" href="/index?query=abs" coords="36,144,54,143,50,173,48,198,48,220,39,234" shape="poly"/>
+                    <area area data-tip data-for="side" target="_self" alt="side" title="side" href="/index?query=side" coords="53,143,59,145,64,260,38,238,49,224,50,179" shape="poly"/>
+                    <area area data-tip data-for="glutei" target="_self" alt="glutei" title="glutei" href="/index?query=glute" coords="83,200,93,227,95,242,86,258,79,257,79,234" shape="poly"/>
+                    <area area data-tip data-for="hips" target="_self" alt="hips" title="hips" href="/index?query=hip" coords="39,244,40,274,60,273,59,259" shape="poly"/>
+                    <area area data-tip data-for="quad" target="_self" alt="quad" title="quad" href="/index?query=quad" coords="57,277,63,348,54,349,41,275" shape="poly"/>
+                    <area area data-tip data-for="it band" target="_self" alt="it band" title="it band" href="/index?query=it+band" coords="61,292,63,345,72,348,69,294" shape="poly"/>
+                    <area area data-tip data-for="hammy" target="_self" alt="hammy" title="hammy" href="/index?query=hamstring" coords="79,265,85,266,86,347,73,345,72,302" shape="poly"/>
+                    <area area data-tip data-for="Knee"  target="_self" alt="Knee" title="Knee" href="/index?query=knee" coords="56,351,85,351,89,375,59,376" shape="poly"/>
+                    <area area data-tip data-for="shin" target="_self" alt="shin" title="shin" href="/index?query=shin" coords="60,380,79,378,77,454,66,453,65,415" shape="poly"/>
+                    <area area data-tip data-for="calf" target="_self" alt="calf" title="calf" href="/index?query=calf" coords="79,379,88,378,92,408,88,453,79,451,80,412" shape="poly"/>
+                    <area area data-tip data-for="ankle" target="_self" alt="ankle" title="ankle" href="/index?query=ankle" coords="66,454,86,455,86,469,64,467" shape="poly"/>
+                    <area area data-tip data-for="foot" target="" alt="foot" title="foot" href="/index?query=foot" coords="87,470,91,485,79,492,37,495,26,485,44,479,64,469" shape="poly"/>
                     </map>
               </div>
               </div >
