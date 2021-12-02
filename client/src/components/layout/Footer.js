@@ -29,7 +29,7 @@ class Footer extends Component {
 
   render() {
     return (
-	<footer class="page-footer teal lighten-1">
+	<footer class="page-footer navbar-fixed-bottom teal lighten-1">
           <div class="container">
               <div class="row">
 		      <Link to="/" style={{

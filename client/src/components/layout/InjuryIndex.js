@@ -28,13 +28,13 @@ const InjuryIndex = ({ posts, auth }) => {
    const isAdmin = auth.user.role === "Admin";
 
    return (
-      <React.Fragment>
-         <div className="mx-3">
-            <Nav className="justify-content-between mt-2 mb-2">
+      <div className="container">
+        <div style={{ marginTop: "4rem" }} className="row">
+          <div className="col s8 offset-s2"></div>
                {isAdmin && (
                   <Link to="/create">
                      <Button variant="light" className="styleBtn">
-                        +
+                        New Page
                      </Button>
                   </Link>
                )}
@@ -51,9 +51,8 @@ const InjuryIndex = ({ posts, auth }) => {
                      />
                   </Form.Group>
                </Form>
-            </Nav>
          </div>
-         <div style={{paddingLeft:"400px"}  } >
+         <div >
          {posts.length > 0 ? (
             <ListPost 
                posts={posts.filter(post =>
@@ -72,7 +71,7 @@ const InjuryIndex = ({ posts, auth }) => {
             )
          )}
          </div>
-      </React.Fragment>
+         </div>
    );
 };
 

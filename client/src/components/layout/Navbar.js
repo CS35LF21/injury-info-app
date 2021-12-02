@@ -2,6 +2,8 @@ import { fontFamily } from "@mui/system";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {Button} from "../Button/Button"
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 class Navbar extends Component {
   state = {
     websiteUrl: "",
@@ -24,11 +26,15 @@ class Navbar extends Component {
     });
   };
 
-  submitForm = () => {
-    const { websiteUrl } = this.state;
-    console.log("Website URL", websiteUrl);
+  submitForm = e => {
+    if(!this.state.isValid) {
+      e.preventDefault();
+    } else {
+      const { websiteUrl } = this.state;
+    }
   };
   render() {
+    console.log(this.props.auth.isAuthenticated);
     return (
 	<div className="navbar-fixed" style={{boxShadow: "0 2px 4px 0 rgba(0,0,0,.2)"}}>
         <nav className="z-depth-0">
@@ -49,24 +55,26 @@ class Navbar extends Component {
     <li style={{paddingLeft:"50px"}}>
 		    <p></p>
 		</li>
-    <li>
-      <Link  to="/login" style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Account</b></Link>
-      </li>
-      <li style={{paddingLeft:"50px"}}>
-		    <p></p>
-		    </li>
+    {this.props.auth.isAuthenticated ? (
+      [
+            <li>
+              <Link  to="/login" style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Profile</b></Link>
+            </li>,
+            <li style={{paddingLeft:"50px"}}>
+              <p></p>
+              </li>
+      ]
+         ) : (
+           [
+
 		<li>
       <Link to="/login" className="right"style={{fontFamily: "monospace"}, {  color: "#26a69a"}}><b>Login</b></Link>
-		</li>
+		</li>,
 		<li style={{paddingLeft:"50px"}}>
 		    <p></p>
 		    </li>
-      <li>
-        <a >Components</a>
-      </li>
-      <li>
-        <a >JavaScript</a>
-      </li>
+           ]
+         )}
     </ul>
             
     <Link
@@ -79,7 +87,12 @@ class Navbar extends Component {
       <i className="material-icons">enhanced_encryption</i>
       The Injury Index
     </Link>
-            <form action="index" method = "GET" className="right"style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "30px"}}>
+            <form action="index"
+                  method = "GET"
+                  className="right"
+                  style={{fontFamily: "monospace"}, {paddingLeft: "0px"}, {paddingRight: "30px"}}
+                  onSubmit={this.submitForm} 
+                  >
               <input
                 type="text"
                 name="query"
@@ -96,9 +109,6 @@ class Navbar extends Component {
                 value={this.state.websiteUrl}
                 onChange={this.changeUrl}
               />
-              <button style={{backgroundColor:"transparent"}, {border:"2px solid grey"}} onClick={this.submitForm} disabled={!this.state.isValid}>
-                Search Index
-              </button>
             </form>
 	    <ul id="nav-mobile" className="right hide-on-med-and-down">
 		<li style={{paddingLeft:"0px"}}>
@@ -113,4 +123,13 @@ class Navbar extends Component {
     );
   }
 }
-export default Navbar;
+
+Navbar.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps
+)(Navbar);
