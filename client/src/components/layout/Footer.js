@@ -35,7 +35,8 @@ class Footer extends Component {
                   <h6 class="white-text" style={{marginTop: "25px"}} >Navigate</h6>
                 <ul>
                   <li><Link to="/login" class="grey-text text-lighten-3">Login</Link></li>
-                    <li><Link to="/index?" class="grey-text text-lighten-3" >Search</Link></li>
+		  <li><Link to="/login" class="grey-text text-lighten-3" >Account</Link></li>
+                  <li><Link to="/index?" class="grey-text text-lighten-3" >Search</Link></li>
                   <li><Link to="/about" class="grey-text text-lighten-3" >About</Link></li>
                 </ul>
               </div>
