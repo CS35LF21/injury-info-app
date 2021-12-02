@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "material-ui-search-bar";
+import ReactTooltip from "react-tooltip";
 
 class Landing extends Component {
   constructor(props) {
@@ -18,6 +18,12 @@ class Landing extends Component {
             <h4 style={{paddingTop:"0px"}}>
               <b>Aches and pains</b> keeping you from your sport?
             </h4>
+            <div data-tip data-for="happyFace">
+            react-tooltip default
+            </div>
+          <ReactTooltip id="happyFace">
+            <span>Show happy face</span>
+          </ReactTooltip>
             <h8 className="flow-text grey-text text-darken-1">
               Click on a body part or search above to begin finding the solution
             </h8>
@@ -34,9 +40,18 @@ class Landing extends Component {
                 <div id="front_side" >
                 <img src="/images/front_edge.jpeg" useMap="#image-map1"/>
                   <map name="image-map1">
-                    <area target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
-                    <area target="_self" alt="Eyes" title="Eyes" href="/index?query=" coords="56,41,100,41,99,32,56,31" shape="poly"/>
-                    <area target="_self" alt="Nose" title="Nose" href="/index?query=nose" coords="75,42,76,52,83,51,81,43" shape="poly"/>
+                  <ReactTooltip id="Eyes">
+                    <span>Eyes</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="Nose">
+                    <span>Nose</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="abs">
+                    <span>Abs</span>
+                  </ReactTooltip>
+                    <area data-tip data-for="Eyes" target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
+                    <area data-tip data-for="Eyes" target="_self" alt="Eyes" title="Eyes" href="/index?query=" coords="56,41,100,41,99,32,56,31" shape="poly"/>
+                    <area data-tip data-for="Nose" target="_self" alt="Nose" title="Nose" href="/index?query=nose" coords="75,42,76,52,83,51,81,43" shape="poly"/>
                     <area target="_self" alt="Jaw" title="Jaw" href="/index?query=jaw" coords="57,46,66,60,79,68,90,63,104,43,85,42,86,50,76,52,71,42" shape="poly"/>
                     <area target="_self" alt="neck" title="Neck" href="/index?query=neck" coords="67,66,78,70,90,66,97,79,80,86,62,79" shape="poly"/>
                     <area target="_self" alt="Collarbone" title="Collarbone" href="/index?query=collarbone" coords="48,100,77,101,110,101,105,89,79,88,52,87" shape="poly"/>
@@ -51,7 +66,7 @@ class Landing extends Component {
                     <area target="_self" alt="l_forearm" title="l_forearm" href="/index?query=forearm" coords="126,204,143,201,139,252,130,249" shape="poly"/>
                     <area target="_self" alt="r_hand" title="r_hand" href="/index?query=hand" coords="17,254,28,255,25,270,27,282,22,286,14,275" shape="poly"/>
                     <area target="_self" alt="l_hand" title="l_hand" href="/index?query=hand" coords="131,251,140,255,144,271,139,290,131,285" shape="poly"/>
-                    <area target="_self" alt="abs" title="abs" href="/index?query=abs" coords="100,182,93,207,92,228,66,230,64,209,60,180,56,158,103,159" shape="poly"/>
+                    <area data-tip data-for="abs" target="_self" alt="abs" title="abs" href="/index?query=abs" coords="100,182,93,207,92,228,66,230,64,209,60,180,56,158,103,159" shape="poly"/>
                     <area target="_self" alt="side" title="side" href="/index?query=side" coords="53,159,44,162,39,206,39,227,37,248,61,249,81,248,120,249,119,226,112,194,114,158,105,159,104,176,98,194,92,226,68,228" shape="poly"/>
                     <area target="_self" alt="hips" title="hips" href="/index?query=hips" coords="35,270,72,272,119,271,119,252,78,250,34,249" shape="poly"/>
                     <area target="_self" alt="quad" title="quad" href="/index?query=quad" coords="36,273,47,337,111,337,121,273" shape="poly"/>
