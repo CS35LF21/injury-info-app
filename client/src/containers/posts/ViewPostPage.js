@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ViewPost from "../../components/posts/ViewPost";
-import { deletePost, getPostByID } from "../../actions/postActions";
+import { updatePost, deletePost, getPostByID } from "../../actions/postActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -24,13 +24,27 @@ const ViewPostPage = ({
       deletePost(post._id, history);
    };
 
-   if (Object.keys(post).length === 0) return <div />;
+   const handleNewComment = (e) => {
+      e.preventDefault();
+      console.log("handleNewComment");
+      //   setPost({
+      //     ...post,
+      //     e.target.body:
+      //   });
+      var comments = post.comments;
+      comments.push(e)
+      console.log({ comments });
+      updatePost(post._id, { comments }, history);
+    };
+
+   if (Object.keys(post).length === 0) return <div />; 
    return (
       <ViewPost
          post={post}
          auth={auth}
          onDelete={handleDelete}
          onEdit={handleEdit}
+         onNewComment={handleNewComment}
       />
    );
 };

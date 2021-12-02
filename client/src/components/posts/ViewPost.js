@@ -6,16 +6,33 @@ import ReactMarkdown from 'react-markdown'
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 
-const ViewPost = ({ post, auth, onDelete, onEdit }) => {
+const ViewPost = ({ post, auth, onDelete, onEdit, onNewComment }) => {
    return (
      <div className="container">
        <div style={{ marginTop: "4rem" }} className="row">
          <div className="col s8 offset-s2">
-           <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                <ReactMarkdown>
                    {post.body}
                </ReactMarkdown>
-           </div>
+            </div>
+
+            {
+               post.comments.map(comment=>{
+                  return (
+                     <h6 key={comment}>{comment}</h6>
+                  )
+               })
+            }
+
+           <form onSubmit={(e)=>{
+               e.defaultPrevented();
+               onNewComment("This is a new comment")
+               console.log("This is a new comment")
+            }}>
+               <input type = 'text' placeholder = "Add a comment" />
+            </form>
+
          </div>
        </div>
        {auth && (

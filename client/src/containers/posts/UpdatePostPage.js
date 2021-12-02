@@ -21,6 +21,7 @@ const UpdatePostPage = ({ errors, updatePost, currentPost, getPostByID, loading,
     setPost((post) => ({
       title: currentPost.title,
       body: currentPost.body,
+      comments: currentPost.comments,
       errors: { ...post.errors },
     }));
     console.log(currentPost.body);
@@ -51,6 +52,7 @@ const UpdatePostPage = ({ errors, updatePost, currentPost, getPostByID, loading,
   //       const error = { ...post.errors, ...Validate(name, value).errors };
   //       setPost({ ...post, errors: { ...error } });
   //    };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
