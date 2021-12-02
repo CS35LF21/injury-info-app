@@ -18,12 +18,6 @@ class Landing extends Component {
             <h4 style={{paddingTop:"0px"}}>
               <b>Aches and pains</b> keeping you from your sport?
             </h4>
-            <div data-tip data-for="happyFace">
-            react-tooltip default
-            </div>
-          <ReactTooltip id="happyFace">
-            <span>Show happy face</span>
-          </ReactTooltip>
             <h8 className="flow-text grey-text text-darken-1">
               Click on a body part or search above to begin finding the solution
             </h8>
@@ -49,14 +43,26 @@ class Landing extends Component {
                   <ReactTooltip id="abs">
                     <span>Abs</span>
                   </ReactTooltip>
+                  <ReactTooltip id="quad">
+                    <span>Quad</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="feet">
+                    <span>Feet</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="knee">
+                    <span>Knee</span>
+                  </ReactTooltip>
+                  <ReactTooltip id="shins">
+                    <span>Shins</span>
+                  </ReactTooltip>
                     <area data-tip data-for="Eyes" target="_self" alt="Eyes" title="Eyes" href="/index?query=eyes" coords="56,41,100,41,99,32,56,31" shape="poly"/>
                     <area data-tip data-for="Eyes" target="_self" alt="Eyes" title="Eyes" href="/index?query=" coords="56,41,100,41,99,32,56,31" shape="poly"/>
                     <area data-tip data-for="Nose" target="_self" alt="Nose" title="Nose" href="/index?query=nose" coords="75,42,76,52,83,51,81,43" shape="poly"/>
-                    <area target="_self" alt="Jaw" title="Jaw" href="/index?query=jaw" coords="57,46,66,60,79,68,90,63,104,43,85,42,86,50,76,52,71,42" shape="poly"/>
-                    <area target="_self" alt="neck" title="Neck" href="/index?query=neck" coords="67,66,78,70,90,66,97,79,80,86,62,79" shape="poly"/>
-                    <area target="_self" alt="Collarbone" title="Collarbone" href="/index?query=collarbone" coords="48,100,77,101,110,101,105,89,79,88,52,87" shape="poly"/>
-                    <area target="_self" alt="Chest" title="Chest" href="/index?query=chest" coords="46,129,46,155,77,156,111,156,113,135,114,105,77,104,43,105" shape="poly"/>
-                    <area target="_self" alt="r_shoulder" title="r_shoulder" href="/index?query=shoulder" coords="42,87,41,128,19,126,22,101" shape="poly"/>
+                    <area data-tip data-for="Jaw"target="_self" alt="Jaw" title="Jaw" href="/index?query=jaw" coords="57,46,66,60,79,68,90,63,104,43,85,42,86,50,76,52,71,42" shape="poly"/>
+                    <area data-tip data-for="neck"target="_self" alt="neck" title="Neck" href="/index?query=neck" coords="67,66,78,70,90,66,97,79,80,86,62,79" shape="poly"/>
+                    <area data-tip data-for="Collarbone"target="_self" alt="Collarbone" title="Collarbone" href="/index?query=collarbone" coords="48,100,77,101,110,101,105,89,79,88,52,87" shape="poly"/>
+                    <area data-tip data-for="Chest"target="_self" alt="Chest" title="Chest" href="/index?query=chest" coords="46,129,46,155,77,156,111,156,113,135,114,105,77,104,43,105" shape="poly"/>
+                    <area data-tip data-for="r_shoulder"target="_self" alt="r_shoulder" title="r_shoulder" href="/index?query=shoulder" coords="42,87,41,128,19,126,22,101" shape="poly"/>
                     <area target="_self" alt="l_shoulder" title="l_shoulder" href="/index?query=shoulder" coords="113,86,117,126,137,127,132,95" shape="poly"/>
                     <area target="_self" alt="l_bicep" title="l_bicep" href="/index?query=bicep" coords="119,132,138,132,141,173,121,176" shape="poly"/>
                     <area target="_self" alt="r_bicep" title="r_bicep" href="/index?query=bicep" coords="20,132,39,132,36,177,19,171" shape="poly"/>
@@ -69,10 +75,10 @@ class Landing extends Component {
                     <area data-tip data-for="abs" target="_self" alt="abs" title="abs" href="/index?query=abs" coords="100,182,93,207,92,228,66,230,64,209,60,180,56,158,103,159" shape="poly"/>
                     <area target="_self" alt="side" title="side" href="/index?query=side" coords="53,159,44,162,39,206,39,227,37,248,61,249,81,248,120,249,119,226,112,194,114,158,105,159,104,176,98,194,92,226,68,228" shape="poly"/>
                     <area target="_self" alt="hips" title="hips" href="/index?query=hips" coords="35,270,72,272,119,271,119,252,78,250,34,249" shape="poly"/>
-                    <area target="_self" alt="quad" title="quad" href="/index?query=quad" coords="36,273,47,337,111,337,121,273" shape="poly"/>
-                    <area target="_self" alt="knee" title="knee" href="/index?query=knee" coords="49,364,72,364,84,364,109,364,109,342,84,340,75,340,50,341" shape="poly"/>
-                    <area target="_self" alt="shins" title="shins" href="/index?query=shins" coords="45,368,57,428,59,463,72,469,80,466,99,463,104,426,107,367" shape="poly"/>
-                    <area target="_self" alt="feet" title="feet" href="/index?query=feet" coords="49,486,68,496,89,495,111,487,99,463,81,466,74,466,59,465" shape="poly"/>
+                    <area data-tip data-for="quad" target="_self" alt="quad" title="quad" href="/index?query=quad" coords="36,273,47,337,111,337,121,273" shape="poly"/>
+                    <area data-tip data-for="knee" target="_self" alt="knee" title="knee" href="/index?query=knee" coords="49,364,72,364,84,364,109,364,109,342,84,340,75,340,50,341" shape="poly"/>
+                    <area data-tip data-for="shins" target="_self" alt="shins" title="shins" href="/index?query=shins" coords="45,368,57,428,59,463,72,469,80,466,99,463,104,426,107,367" shape="poly"/>
+                    <area data-tip data-for="feet"target="_self" alt="feet" title="feet" href="/index?query=feet" coords="49,486,68,496,89,495,111,487,99,463,81,466,74,466,59,465" shape="poly"/>
                   </map>
               </div>
               </div>
