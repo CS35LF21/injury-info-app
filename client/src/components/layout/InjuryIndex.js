@@ -16,7 +16,7 @@ const InjuryIndex = ({ posts, auth }) => {
    const [search, setSearch] = useState(temp.toLowerCase());
    const [display, setDisplay] = useState(false);
    var { height, width } = useWindowDimensions();
-   height = height - 450
+   height = height - 440
    var string1 = height.toString() + "px"
 
    const handleChange = e => {

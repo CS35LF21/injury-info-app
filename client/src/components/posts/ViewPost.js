@@ -10,7 +10,7 @@ import useWindowDimensions from "../Window/Window"
 
 const ViewPost = ({ post, auth, onDelete, onEdit }) => {
    var { height, width } = useWindowDimensions();
-   height = height - 425
+   height = height - 415
    var string1 = height.toString() + "px"
    return (
      <div className="container" style={{minHeight:string1}}>
