@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
+import useWindowDimensions from "../Window/Window"
+
 
 const InjuryIndex = ({ posts, auth }) => {
 
@@ -13,6 +15,9 @@ const InjuryIndex = ({ posts, auth }) => {
    const inputRef = useRef(null);
    const [search, setSearch] = useState(temp.toLowerCase());
    const [display, setDisplay] = useState(false);
+   var { height, width } = useWindowDimensions();
+   height = height - 440
+   var string1 = height.toString() + "px"
 
    const handleChange = e => {
       setSearch(inputRef.current.value.toLowerCase());
@@ -54,11 +59,13 @@ const InjuryIndex = ({ posts, auth }) => {
          </div>
          <div >
          {posts.length > 0 ? (
+            <div style={{minHeight:string1}}>
             <ListPost 
                posts={posts.filter(post =>
                   post.title.toLowerCase().includes(search)
                )}
             />
+            </div>
          ) : (
             display && (
                <Container

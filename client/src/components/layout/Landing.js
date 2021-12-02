@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "material-ui-search-bar";
+
 class Landing extends Component {
   constructor(props) {
     super(props);

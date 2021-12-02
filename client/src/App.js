@@ -16,6 +16,7 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import NotFound from "./components/layout/NotFound";
+import About from "./components/layout/About";
 
 
 
@@ -57,6 +58,7 @@ class App extends Component {
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/about" component={About} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <AdminRoute exact path="/create" component={CreatePostPage} />
               <Route exact path="/page/:id" component={ViewPostPage} />
@@ -71,4 +73,7 @@ class App extends Component {
     );
   }
 }
+
+
+
 export default App;

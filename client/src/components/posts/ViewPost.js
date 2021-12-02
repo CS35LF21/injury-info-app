@@ -4,11 +4,16 @@ import PropTypes from "prop-types";
 // import "./post.scss";
 import ReactMarkdown from 'react-markdown'
 import { Container, Row, Col, Button } from "react-bootstrap";
+import useWindowDimensions from "../Window/Window"
+
 
 
 const ViewPost = ({ post, auth, onDelete, onEdit }) => {
+   var { height, width } = useWindowDimensions();
+   height = height - 415
+   var string1 = height.toString() + "px"
    return (
-     <div className="container">
+     <div className="container" style={{minHeight:string1}}>
        <div style={{ marginTop: "4rem" }} className="row">
          <div className="col s8 offset-s2">
            <div className="col s12" style={{ paddingLeft: "11.250px" }}>

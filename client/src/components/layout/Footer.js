@@ -7,30 +7,10 @@ class Footer extends Component {
     websiteUrl: "",
     isValid: false
   };
-
-  validateWebsiteUrl = websiteUrl => {
-    return String(websiteUrl).toLowerCase();
-  };
-
-  changeUrl = e => {
-    const { value } = e.target;
-    const isValid = !value || this.validateWebsiteUrl(value);
-
-    this.setState({
-      websiteUrl: value,
-      isValid
-    });
-  };
-
-  submitForm = () => {
-    const { websiteUrl } = this.state;
-    console.log("Website URL", websiteUrl);
-  };
-
   render() {
     return (
-	<footer class="page-footer navbar-fixed-bottom teal lighten-1">
-          <div class="container">
+	<footer className="page-footer teal lighten-1" style={{paddingTop: "5vh"}}>
+          <div className="container">
               <div class="row">
 		      <Link to="/" style={{
 			  
@@ -48,14 +28,15 @@ class Footer extends Component {
 				      <p class="grey-text text-lighten-4" style={{margin:"0"}}>Dylan Wilbur</p>
 				      <p class="grey-text text-lighten-4" style={{margin:"0"}}>Keaton Heisterman</p>
 				      <p class="grey-text text-lighten-4"style={{margin:"0"}}>Jai Parera</p>
-				      <p class="grey-text text-lighten-4"style={{margin:"0"}}>& Ethan Matus</p>
+				      <p class="grey-text text-lighten-4"style={{margin:"0"}}>Ethan Matus</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                  <h6 class="white-text" style={{marginTop: "25px"}} >Navigate</h6>
+                  <h6 class="white-text" style={{marginTop: "25px"}}>Navigate</h6>
                 <ul>
                   <li><Link to="/login" class="grey-text text-lighten-3">Login</Link></li>
-                    <li><Link to="/index?" class="grey-text text-lighten-3" >Search</Link></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+		  <li><Link to="/login" class="grey-text text-lighten-3" >Account</Link></li>
+                  <li><Link to="/index?" class="grey-text text-lighten-3" >Search</Link></li>
+                  <li><Link to="/about" class="grey-text text-lighten-3" >About</Link></li>
                 </ul>
               </div>
             </div>
