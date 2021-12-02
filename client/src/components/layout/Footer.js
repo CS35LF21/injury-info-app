@@ -7,7 +7,6 @@ class Footer extends Component {
     websiteUrl: "",
     isValid: false
   };
-
   render() {
     return (
 	<footer className="page-footer teal lighten-1" style={{paddingTop: "5vh"}}>
