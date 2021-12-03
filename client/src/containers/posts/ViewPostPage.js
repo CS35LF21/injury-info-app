@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ViewPost from "../../components/posts/ViewPost";
-import { updatePost, deletePost, getPostByID, addComment } from "../../actions/postActions";
+import { updatePost, deletePost, getPostByID, addComment, deleteComments } from "../../actions/postActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -11,6 +11,7 @@ const ViewPostPage = ({
    history,
    updatePost,
    getPostByID,
+   deleteComments,
    deletePost,
    addComment
 }) => {
@@ -32,6 +33,12 @@ const ViewPostPage = ({
       addComment(post._id, post, history);
     };
 
+   const handleDeleteComments = () => {
+      console.log("Inside handler");
+      post.comments = [" "];
+      deleteComments(post._id, post, history);
+   }
+
    if (Object.keys(post).length === 0) return <div />; 
    return (
       <ViewPost
@@ -39,6 +46,7 @@ const ViewPostPage = ({
          auth={auth}
          onDelete={handleDelete}
          onEdit={handleEdit}
+         onDeleteComments={handleDeleteComments}
          onNewComment={handleNewComment}
       />
    );
@@ -56,9 +64,10 @@ ViewPostPage.propTypes = {
    deletePost: PropTypes.func.isRequired,
    updatePost: PropTypes.func.isRequired,
    addComment: PropTypes.func.isRequired,
+   deleteComments: PropTypes.func.isRequired,
 };
 
 export default connect(
    mapStateToProps,
-   { getPostByID, deletePost, updatePost, addComment }
+   { getPostByID, deletePost, updatePost, addComment, deleteComments }
 )(ViewPostPage);

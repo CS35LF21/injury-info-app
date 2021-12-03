@@ -76,13 +76,11 @@ router.get(
              'message': 'You cannot perform this action as a non-admin'
           });
        }
-       console.log('inside patch 2');
        const author = req.user.user_name;
        const { errors, isValid } = validatePostInput(req.body);
        if (!isValid) {
           return res.status(400).json(errors);
        }
-       console.log("Inside patch 3");
        const { title, body } = req.body;
        Post.findOneAndUpdate(
           { author, _id: req.params.id },
@@ -122,12 +120,16 @@ router.patch(
    "/update/:id/deleteComments",
    passport.authenticate("jwt", { session: false }),
    (req, res) => {
-      const author = req.user.user_name;
+      console.log("Inside api 1")
+      if(req.user.role !== "Admin") {
+         return res.send(403, {
+            'status': 403,
+            'code': 1,
+            'message': 'You cannot perform this action as a non-admin'
+         });
+      }
+      console.log("Inside api 2")
       const { comments } = req.body;
-      var comment = comments.pop(-1);
-      console.log(comment);
-      comment = "Anonymous" + ": " + comment;
-      comments.push(comment)
       Post.findOneAndUpdate(
          { _id: req.params.id },
          { $set: { comments } },
@@ -135,7 +137,7 @@ router.patch(
       )
          .then(doc => res.status(200).json(doc))
          .catch(err =>
-            res.status(400).json({ update: "Error adding comment to existing post" })
+            res.status(400).json({ update: "Error deleting all comments from existing post" })
          );
    }
 );

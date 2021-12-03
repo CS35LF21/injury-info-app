@@ -17,7 +17,7 @@ import useWindowDimensions from "../Window/Window"
             </form>
 */
 
-const ViewPost = ({ post, auth, onDelete, onEdit, onNewComment }) => {
+const ViewPost = ({ post, auth, onDelete, onEdit, onNewComment, onDeleteComments }) => {
    var { height, width } = useWindowDimensions();
    height = height - 415
    var string1 = height.toString() + "px"
@@ -49,6 +49,9 @@ const ViewPost = ({ post, auth, onDelete, onEdit, onNewComment }) => {
                   </Button>
                   <Button variant="secondary" onClick={onDelete}>
                      Delete
+                  </Button>
+                  <Button variant="tertiary" onClick={onDeleteComments}>
+                     Delete Comments
                   </Button>
                </Col>
             </Row>

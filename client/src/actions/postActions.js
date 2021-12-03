@@ -85,6 +85,28 @@ export const getPosts = () => dispatch => {
       });
 };
 
+
+export const updatePost = (id, postData, history) => dispatch => {
+   dispatch(togglePostLoading());
+   axios
+      .patch(`/api/posts/update/${id}`, postData)
+      .then(res => {
+         dispatch({
+            type: UPDATE_POST,
+            payload: res.data
+         });
+         dispatch(togglePostLoading());
+         history.push(`/page/${res.data._id}`); //is this where refresh is coming from?
+      })
+      .catch(err => {
+         console.log(err);
+         if (err.response && err.response.data)
+            dispatch(setErrors(err.response.data))
+         dispatch(togglePostLoading());
+      });
+};
+
+
 export const addComment = (id, postData, history) => dispatch => {
    dispatch(togglePostLoading());
    axios
@@ -107,10 +129,11 @@ export const addComment = (id, postData, history) => dispatch => {
 };
 
 
-export const updatePost = (id, postData, history) => dispatch => {
+export const deleteComments = (id, postData, history) => dispatch => {
+   console.log("Inside postActions")
    dispatch(togglePostLoading());
    axios
-      .patch(`/api/posts/update/${id}`, postData)
+      .patch(`/api/posts/update/${id}/deleteComments`, postData)
       .then(res => {
          dispatch({
             type: UPDATE_POST,
@@ -118,26 +141,6 @@ export const updatePost = (id, postData, history) => dispatch => {
          });
          dispatch(togglePostLoading());
          history.push(`/page/${res.data._id}`); //is this where refresh is coming from?
-      })
-      .catch(err => {
-         console.log(err);
-         if (err.response && err.response.data)
-            dispatch(setErrors(err.response.data))
-         dispatch(togglePostLoading());
-      });
-};
-
-export const deleteComments = (id, history) => dispatch => {
-   dispatch(togglePostLoading());
-   axios
-      .patch(`/api/posts/update/${id}/deleteComments`)
-      .then(res => {
-         dispatch({
-            type: UPDATE_POST,
-            payload: id
-         });
-         dispatch(togglePostLoading());
-         history.push("/index");
       })
       .catch(err => {
          if (err.response && err.response.data)
