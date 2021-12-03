@@ -6,15 +6,15 @@ import ReactMarkdown from 'react-markdown'
 import { Container, Row, Col, Button } from "react-bootstrap";
 import useWindowDimensions from "../../components/Window/Window"
 
-import useStyles from './styles';
+//import useStyles from './styles';
 
 const ViewComments = ({ post, onNewComment }) => {
    var { height, width } = useWindowDimensions();
    height = height - 415
    var string1 = height.toString() + "px"
 
-   const classes = useStyles();
-   const [comments, setComments] = useState(post.comments);
+//   const classes = useStyles();
+   const [comments, setComments] = useState(post?.comments);
    const [comment, setComment] = useState("")
 
    const handleClick = () => {
