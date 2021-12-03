@@ -103,7 +103,6 @@ export const addComment = (id, postData) => async (dispatch) => {
 
 export const updatePost = (id, postData, history) => dispatch => {
    dispatch(togglePostLoading());
-   console.log("Inside updatePost");
    axios
       .patch(`/api/posts/update/${id}`, postData)
       .then(res => {
@@ -116,8 +115,6 @@ export const updatePost = (id, postData, history) => dispatch => {
          history.push(`/page/${res.data._id}`);
       })
       .catch(err => {
-         console.log(err);
-         console.log(err.response.data)
          dispatch(setErrors(err.response.data));
          dispatch(togglePostLoading());
       });
