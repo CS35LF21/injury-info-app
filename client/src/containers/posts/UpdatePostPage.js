@@ -8,7 +8,7 @@ const UpdatePostPage = ({ errors, updatePost, currentPost, getPostByID, loading,
   const [post, setPost] = useState({
     title: "",
     body: "",
-//    comments: [],
+    comments: [" "],
     errors: {},
   });
   const [content, setContent] = useState("init");
@@ -22,7 +22,7 @@ const UpdatePostPage = ({ errors, updatePost, currentPost, getPostByID, loading,
     setPost((post) => ({
       title: currentPost.title,
       body: currentPost.body,
-//      comments: currentPost.comments,
+      comments: currentPost.comments,
       errors: { ...post.errors },
     }));
     console.log(currentPost.body);
