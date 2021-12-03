@@ -8,6 +8,7 @@ const UpdatePostPage = ({ errors, updatePost, currentPost, getPostByID, loading,
   const [post, setPost] = useState({
     title: "",
     body: "",
+    comments: [],
     errors: {},
   });
   const [content, setContent] = useState("init");
@@ -61,9 +62,9 @@ const UpdatePostPage = ({ errors, updatePost, currentPost, getPostByID, loading,
     //     e.target.body:
     //   });
     post.body = content;
-    const { title, body } = post;
-    console.log({ title, body });
-    updatePost(currentPost._id, { title, body }, history);
+    const { title, body, comments } = post;
+    console.log({ title, body, comments });
+    updatePost(currentPost._id, { title, body, comments }, history);
   };
 
   // to ensure that the post is loaded otherwise we would make uncontrolled form access error
@@ -94,7 +95,7 @@ const mapStateToProps = (state) => ({
 
 UpdatePostPage.propTypes = {
    currentPost: PropTypes.object.isRequired,
-   errors: PropTypes.object.isRequired,
+   errors: PropTypes.string.isRequired,
    loading: PropTypes.bool.isRequired,
    getPostByID: PropTypes.func.isRequired,
    updatePost: PropTypes.func.isRequired
