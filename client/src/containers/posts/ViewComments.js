@@ -34,7 +34,7 @@ const ViewComments = ({ post, onNewComment }) => {
          <div>
             <div>
                <Typography gutterBottom variant = "h6">Comments</Typography>
-               {comments.map((c, i) => (
+               {comments && comments.map((c, i) => (
                   <Typography key={i} gutterBottom variant = "subtitle1">
                      {c}
                   </Typography>

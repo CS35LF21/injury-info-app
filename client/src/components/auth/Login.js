@@ -38,16 +38,16 @@ onChange = e => {
   };
 onSubmit = e => {
     e.preventDefault();
-const userData = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
     console.log(userData);
-this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
-  };
+    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+};
 render() {
     const { errors } = this.state;
-return (
+    return (
       <div className="container" style={{paddingBottom:"10vh"}}>
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
