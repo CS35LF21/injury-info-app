@@ -19,6 +19,9 @@ const ViewComments = ({ post, onNewComment }) => {
 
    const handleClick = () => {
       const finalComment = `${comment}`;
+      var localComments = post.comments.slice();
+      localComments.push("Anonymous: " + finalComment);
+      setComments(localComments);
       onNewComment(finalComment);
    };
 //<div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -28,8 +31,8 @@ const ViewComments = ({ post, onNewComment }) => {
 //   if (comments.length !== 0) {
    return (
       <div>
-         <div className={classes.commentsOuterContainer}>
-            <div className={classes.commentsInnerContainer}>
+         <div>
+            <div>
                <Typography gutterBottom variant = "h6">Comments</Typography>
                {comments.map((c, i) => (
                   <Typography key={i} gutterBottom variant = "subtitle1">
@@ -48,7 +51,7 @@ const ViewComments = ({ post, onNewComment }) => {
                      value={comment}
                      onChange={(e)=>setComment(e.target.value)}
                   />
-                  <Button style={{marginTop: "10px"}} fullWidth disabled={!comment} variant="contained" color="primary" onClick={handleClick}>
+                  <Button type="button" style={{marginTop: "10px"}} fullWidth disabled={!comment} variant="contained" color="primary" onClick={handleClick}>
                      Comment
                   </Button>
             </div>

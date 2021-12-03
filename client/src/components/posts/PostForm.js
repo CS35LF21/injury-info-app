@@ -54,7 +54,7 @@ const PostForm = ({ post, content, onChange, mdeChange, loading, onSubmit }) => 
 
 PostForm.propTypes = {
   post: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired
 };

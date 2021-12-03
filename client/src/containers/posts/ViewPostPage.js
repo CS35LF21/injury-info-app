@@ -29,7 +29,7 @@ const ViewPostPage = ({
    const handleNewComment = (e) => {
       post.comments.push(e);
       console.log(post);
-      addComment(post._id, post);
+      addComment(post._id, post, history);
     };
 
    if (Object.keys(post).length === 0) return <div />; 

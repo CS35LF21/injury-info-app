@@ -69,7 +69,6 @@ router.get(
     "/update/:id",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-      /* 
       if(req.user.role !== "Admin") {
           return res.send(403, {
              'status': 403,
@@ -77,8 +76,8 @@ router.get(
              'message': 'You cannot perform this action as a non-admin'
           });
        }
-       */
        console.log('inside patch 2');
+       const author = req.user.user_name;
        const { errors, isValid } = validatePostInput(req.body);
        if (!isValid) {
           return res.status(400).json(errors);
@@ -96,6 +95,28 @@ router.get(
           );
     }
  );
+
+ router.patch(
+   "/update/:id/addComment",
+   passport.authenticate("jwt", { session: false }),
+   (req, res) => {
+      const author = req.user.user_name;
+      const { comments } = req.body;
+      var comment = comments.pop(-1);
+      console.log(comment);
+      comment = "Anonymous" + ": " + comment;
+      comments.push(comment)
+      Post.findOneAndUpdate(
+         { _id: req.params.id },
+         { $set: { comments } },
+         { new: true }
+      )
+         .then(doc => res.status(200).json(doc))
+         .catch(err =>
+            res.status(400).json({ update: "Error adding comment to existing post" })
+         );
+   }
+);
  
  router.delete(
     "/delete/:id",

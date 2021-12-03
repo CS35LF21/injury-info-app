@@ -43,7 +43,8 @@ export const getPostByID = id => dispatch => {
 
       .catch(err => {
             console.log(err)
-            dispatch(setErrors(err.response.data));
+            if (err.response && err.response.data)
+               dispatch(setErrors(err.response.data));
             dispatch(togglePostLoading());
       });
 };
@@ -78,28 +79,33 @@ export const getPosts = () => dispatch => {
          dispatch(togglePostsLoading());
       })
       .catch(err => {
-         dispatch(setErrors(err.response.data));
+         if (err.response && err.response.data)
+            dispatch(setErrors(err.response.data));
          dispatch(togglePostsLoading());
       });
 };
 
-export const addComment = (id, postData) => async (dispatch) => {
+export const addComment = (id, postData, history) => dispatch => {
    dispatch(togglePostLoading());
-   console.log("Inside addComment");
-   try {
-      let result = await axios.patch(          // any call like get
-        `/api/posts/update/${id}`,         // your URL
-        {                                     // data if post, put
-          comments: postData.comments,
-          title: postData.title,
-          body: postData.body
-        }
-      );
-      console.log(result.response.data);
-    } catch (error) {
-      console.error(error.response.data);     // NOTE - use "error.response.data` (not "error")
-    }
-}
+   axios
+      .patch(`/api/posts/update/${id}/addComment`, postData)
+      .then(res => {
+         dispatch({
+            type: UPDATE_POST,
+            payload: res.data
+         });
+         dispatch(togglePostLoading());
+         history.push(`/page/${res.data._id}`);
+      })
+      .catch(err => {
+         console.log(err);
+         if (err.response && err.response.data) {
+            dispatch(setErrors(err.response.data));
+         }
+         dispatch(togglePostLoading());
+      });
+};
+
 
 export const updatePost = (id, postData, history) => dispatch => {
    dispatch(togglePostLoading());
@@ -115,7 +121,9 @@ export const updatePost = (id, postData, history) => dispatch => {
          history.push(`/page/${res.data._id}`);
       })
       .catch(err => {
-         dispatch(setErrors(err.response.data));
+         console.log(err);
+         if (err.response && err.response.data)
+            dispatch(setErrors(err.response.data))
          dispatch(togglePostLoading());
       });
 };
@@ -133,7 +141,8 @@ export const deletePost = (id, history) => dispatch => {
          history.push("/index");
       })
       .catch(err => {
-         dispatch(setErrors(err.response.data));
+         if (err.response && err.response.data)
+            dispatch(setErrors(err.response.data));
          dispatch(togglePostLoading());
       });
 };
