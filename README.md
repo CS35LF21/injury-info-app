@@ -3,8 +3,8 @@
 Contributors:
 Dylan Wilbur,
 Keaton Heisterman,
-Ethan Matus
-Jai Parera
+Ethan Matus,
+Jai Parera (NFJ1618)
 
 ## Configuration
 You will need to add a file `config/keys.js` with the following information:
